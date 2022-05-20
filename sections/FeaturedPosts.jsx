@@ -39,9 +39,9 @@ const FeaturedPosts = () => {
                     >
                     {!isLoading && 
                         featuredPosts.map((post, index) => (
-                            <Carousel.Item>
+                            <Carousel.Item key={index}>
                                 <div className='m-2'>
-                                    <FeaturedPostsCard key={index} post={post} />
+                                    <FeaturedPostsCard post={post} />
                                 </div>
                             </Carousel.Item> 
                         ))
