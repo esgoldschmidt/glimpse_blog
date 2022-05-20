@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { FeaturedPostsCard } from '../components'
 import { getFeaturedPosts } from '../services'
 import {isMobile} from 'react-device-detect';
-// import Carousel from 'react-grid-carousel'
+import Carousel from 'react-grid-carousel'
 
 const FeaturedPosts = () => {
     const [ featuredPosts, setFeaturedPosts ] = useState([])
@@ -20,7 +20,6 @@ const FeaturedPosts = () => {
     return (
         <div>
             <div className='bg-white shadow-lg rounded-lg p-8 mb-8'>
-                {/*
                 <Carousel 
                     cols={4} 
                     rows={2} 
@@ -48,7 +47,6 @@ const FeaturedPosts = () => {
                         ))
                     }
                 </Carousel>
-                */}
             </div>
         </div>
     )
