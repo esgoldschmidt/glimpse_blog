@@ -15,7 +15,7 @@ type Data = {
   name: string
 }
 
-export default async function comments(req, res){
+export default async function comments(req: any, res: any){
   const graphQLClient = new GraphQLClient(graphqlAPI, {
     headers: {
       authorization: `Bearer ${graphcmsToken}`
