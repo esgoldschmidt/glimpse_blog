@@ -3,7 +3,6 @@ import { FeaturedPostsCard } from '../components'
 import { getFeaturedPosts } from '../services'
 import {isMobile} from 'react-device-detect';
 import Carousel from 'react-grid-carousel'
-import 'react-multi-carousel/lib/styles.css';
 
 const FeaturedPosts = () => {
     const [ featuredPosts, setFeaturedPosts ] = useState([])
