@@ -1,5 +1,7 @@
 import React from 'react'
 import moment from 'moment'
+import { RichText } from '@graphcms/rich-text-react-renderer';
+import Link from 'next/link';
 
 const PostDetail = ( {post} ) => {
 
@@ -16,9 +18,18 @@ const PostDetail = ( {post} ) => {
             if ( obj.underline ) {
                 modifiedText = (<u key={index}>{ text }</u>)
             }
+            if ( obj.href ) {
+                modifiedText = (<a href={obj.href} className='text-blue-500'> {obj.children[0].text}</a>)
+            }
         }
 
+
+
         switch (type) {
+            case 'heading-one':
+               return <h1 key={index} className="text-3xl font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h1>;
+            case 'heading-two':
+                return <h2 key={index} className="text-2xl font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h2>;
             case 'heading-three':
               return <h3 key={index} className="text-xl font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
             case 'paragraph':
