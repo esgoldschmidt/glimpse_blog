@@ -1,9 +1,9 @@
 import React from 'react';
-import ourwork from '../../Components/data/allourwork'
+import ourwork from '../../components/data/allourwork'
 import { useRouter } from 'next/router'
 import { Helmet } from 'react-helmet';
-import ContactForm from "../../Components/ContactForm";
-import FooterSite from "../../Components/FooterSite";
+import ContactForm from "../../components/ContactForm";
+import FooterSite from "../../ccomponents/FooterSite";
 import HeaderSite from '../../components/HeaderSite';
 
 function singleVideo() {
