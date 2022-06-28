@@ -2,10 +2,10 @@ import React from 'react'
 import { Helmet } from "react-helmet";
 import Link from "next/link"
 import HeaderSite from '../../components/HeaderSite';
-import Solutions from "../../Components/Solutions";
-import ContactForm from "../../Components/ContactForm";
-import FooterSite from "../../Components/FooterSite";
-import ClientIndustrySolutions from "../../Components/ClientsIndustrySolutions"
+import Solutions from "../../components/Solutions";
+import ContactForm from "../../components/ContactForm";
+import FooterSite from "../../components/FooterSite";
+import ClientIndustrySolutions from "../../components/ClientsIndustrySolutions"
 import background from "../../assets/images/solutions/wave.png"
 
 import healthcareImage from "../../assets/images/solutions/health-alt.jpg";

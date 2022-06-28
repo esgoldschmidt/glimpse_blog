@@ -1,11 +1,11 @@
 import React from 'react'
 import { Helmet } from "react-helmet";
 import { Box, Typography } from "@mui/material";
-import ContactForm from "../Components/ContactForm";
-import FooterSite from "../Components/FooterSite";
+import ContactForm from "../components/ContactForm";
+import FooterSite from "../components/FooterSite";
 import HeaderSite from '../components/HeaderSite';
 
-import companies from "../Components/data/allcompanies";
+import companies from "../components/data/allcompanies";
 
 function ourCompanies() {
     return (

@@ -1,5 +1,5 @@
 import { React } from "react"
-import allindustries from '../Components/data/allindustries'
+import allindustries from './data/allindustries'
 import Link from 'next/link';
 
 function Solutions () {

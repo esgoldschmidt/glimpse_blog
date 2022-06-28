@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from "react-helmet";
-import ContactForm from "../Components/ContactForm";
-import FooterSite from "../Components/FooterSite";
+import ContactForm from "../components/ContactForm";
+import FooterSite from "../components/FooterSite";
 import HeaderSite from '../components/HeaderSite';
 
 import GlimpsePyramid from "../assets/images/about/GlimpsePyramidLandscape.png";
@@ -19,7 +19,7 @@ import Smith from "../assets/images/about/smith.jpeg";
 import Rothblum from "../assets/images/about/rothblum.png";
 import Meisner from "../assets/images/about/meisner.png";
 import James from "../assets/images/about/james.png";
-import Counter from "../Components/Counter";
+import Counter from "../components/Counter";
 
 function aboutGlimpse() {
     return (
@@ -32,7 +32,7 @@ function aboutGlimpse() {
                 />
             </Helmet>
             <HeaderSite />
-            <div className="py-8 px-3 mt-16">
+            <div className="py-12 px-3 mt-16">
                 <span className="scroll-offset" id="by-the-numbers"></span>
                 <div className="container-text__width text-center w-full">
                     <div className='flex justify-center my-4 w-full'>

@@ -4,12 +4,11 @@ import FooterSite from '../components/FooterSite';
 import ContactForm from '../components/ContactForm'
 import { Helmet } from "react-helmet";
 import { useMediaQuery, Box } from "@mui/material";
-import glimpseCompanies from "../Components/data/allcompanies";
-import VideoJS from "../Components/VideoJS";
-import Clients from "../Components/Clients";
-import Solutions from "../Components/Solutions";
-import Companies from "../Components/Companies";
-
+import glimpseCompanies from "../components/data/allcompanies";
+import VideoJS from "../components/VideoJS";
+import Clients from "../components/Clients";
+import Solutions from "../components/Solutions";
+import Companies from "../components/Companies";
 
 function home() {
     const [companyItems] = useState(glimpseCompanies);
