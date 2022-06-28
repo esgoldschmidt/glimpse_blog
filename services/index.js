@@ -35,7 +35,7 @@ export const getPosts = async () => {
 
     const result = await request(graphqlAPI, query);
 
-    return result.postsConnection.edges;
+    return result.postsConnection.edges.reverse();
 }
 
 export const getPostDetails = async (slug) => {
@@ -92,7 +92,7 @@ export const getRecentPosts = async() => {
     `
     const result = await request(graphqlAPI, query);
     
-    return result.posts
+    return result.posts.reverse()
 }
 
 export const getFeaturedPosts = async() => {
@@ -122,7 +122,7 @@ export const getFeaturedPosts = async() => {
     `
     const result = await request(graphqlAPI, query);
     
-    return result.posts
+    return result.posts.reverse()
 }
 
 export const getSimilarPosts = async (categories, slug) => {
@@ -143,7 +143,7 @@ export const getSimilarPosts = async (categories, slug) => {
     `
     const result = await request(graphqlAPI, query, { categories, slug });
     
-    return result.posts
+    return result.posts.reverse()
 }
 
 export const getCategories = async () => {
@@ -220,6 +220,6 @@ export const getCategoryPost = async (slug) => {
   
     const result = await request(graphqlAPI, query, { slug });
   
-    return result.postsConnection.edges;
+    return result.postsConnection.edges.reverse();
   };
 
