@@ -3,7 +3,7 @@ import ourwork from '../../components/data/allourwork'
 import { useRouter } from 'next/router'
 import { Helmet } from 'react-helmet';
 import ContactForm from "../../components/ContactForm";
-import FooterSite from "../../ccomponents/FooterSite";
+import FooterSite from "../../components/FooterSite";
 import HeaderSite from '../../components/HeaderSite';
 
 function singleVideo() {
