@@ -79,7 +79,7 @@ function ContactForm() {
                 <h2 className='font-light text-gray-600 pb-clr m-2 mt-9 text-4xl' style={{ fontFamily: 'Montserrat' }}>Contact Us</h2>
             </div>
 
-        <Paper elevation={6} className="contact-box bg-gray-100 w-11/12 md:w-9/12 lg:w-1/2 rounded-lg">
+        <Paper elevation={6} className="contact-box bg-gray-100 w-11/12 md:w-9/12 lg:w-1/2 rounded-lg" style={{ backgroundColor: '#f2f2f2' }}>
             <div className="contact-form">
             <form
                 name="insightly_form"
