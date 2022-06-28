@@ -25,6 +25,7 @@ const FeaturedPosts = () => {
                     rows={2} 
                     gap={10} 
                     loop
+                    className='bg-white'
                     responsiveLayout={[
                         {
                         breakpoint: 1300,
