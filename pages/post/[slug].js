@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import Header from '../../components/Header.jsx'
+import HeaderSite from '../../components/HeaderSite.jsx'
 
 import { getPosts, getPostDetails } from '../../services';
 
@@ -15,7 +16,10 @@ const PostDetails = ({ post }) => {
     return (
         
         <div className='container mx-auto px-10 mb-8'>
-        <Header />
+        <HeaderSite />
+        <div className='mt-28'>
+            <Header />
+        </div>
             <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
                 <div className='col-span-1 lg:col-span-8'>
                     <PostDetail post={post} />
