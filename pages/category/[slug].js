@@ -2,12 +2,19 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Header from '../../components/Header.jsx'
 import HeaderSite from '../../components/HeaderSite.jsx'
+import Head from 'next/head';
 
 import { getCategories, getCategoryPost } from '../../services';
 import { PostCard, Categories, Loader } from '../../components';
 
 const CategoryPost = ({ posts }) => {
   const router = useRouter();
+  let {slug} = router.query
+  if (slug === "virtual-reality"){
+    slug = "Virtual Reality"
+  } else if (slug === "augmented-reality"){
+    slug = "Augmented Reality"
+  }
 
   if (router.isFallback) {
     return <Loader />;
@@ -15,6 +22,14 @@ const CategoryPost = ({ posts }) => {
 
   return (
     <div className="container mx-auto px-10 mb-8">
+      <Head>
+        <title>{slug} insights | Industry news and key trends</title>
+        <link rel='icon' href='/favicon.ico' />
+        <meta
+        name="description"
+        content="Insightful and thought-provoking articles on the world of VR, AR, and the metaverse, according to industry experts."
+        />
+      </Head>
       <HeaderSite />
       <div className='mt-28'>
         <Header />

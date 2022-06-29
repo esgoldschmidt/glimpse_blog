@@ -26,38 +26,23 @@ function HeaderSite() {
     const location = router //.pathname
     //const [scrollY, setScrollY] = useState(0);
     const [clientWindowHeight, setClientWindowHeight] = useState("");
+    const [isShrunk, setShrunk] = useState(false);
     const [logoHeight, setLogoHeight] = useState("7rem");
     const [logoWidth, setLogoWidth] = useState("11.66rem");
+    const [animateHeader, setAnimateHeader] = useState(false);
     // const gaEventTracker = useAnalyticsEventTracker('Header');
 
-    const handleScroll = () => {
-      setClientWindowHeight(window.scrollY);
-    };
-
     useEffect(() => {
-      window.addEventListener("scroll", handleScroll); 
-      return () => window.removeEventListener("scroll", handleScroll);
-    });
-
-    useEffect(() => {
-      //let backgroundTransparacyVar = clientWindowHeight / 600;
-      if (clientWindowHeight > 50) {
-        document.getElementById("logo").style.width = "6.66rem";
-        document.getElementById("logo").style.height = "4rem";
-        //setLogoWidth("6.66rem");
-        //setLogoHeight("4rem");
-      } else {
-        document.getElementById("logo").style.width = "11.66rem";
-        document.getElementById("logo").style.height = "7rem";
-        //setLogoWidth("11.66rem");
-        //setLogoHeight("7rem");
-      }
-    }, [clientWindowHeight]);
-
-    console.log("window height", clientWindowHeight)
-    console.log("logo height", logoWidth)
-    console.log("logo width", logoHeight)
-    
+      const listener = () => {
+        if (window.scrollY > 50) {
+          setAnimateHeader(true);
+        } else setAnimateHeader(false);
+      };
+      window.addEventListener("scroll", listener);
+      return () => {
+        window.removeEventListener("scroll", listener);
+      };
+    }, []);
 
     const handleClick = (e, index) => {
       setAnchorEl(e.currentTarget);
@@ -595,20 +580,110 @@ function HeaderSite() {
         </React.Fragment>
       );  
 
-    console.log('matches', matches)
-    console.log('drawer', drawer)
-    console.log('topBar', topBar)
-    console.log('locationPath', location.pathname)
-
     return (
         <div>
+          {/*
+            <header
+              className={`w-full backdrop-filter backdrop-blur-lg bg-white/50 fixed z-10 trasition ease-in-out duration-500 mx-0 ${
+                animateHeader && "shadow-xl"
+              }`}
+            >
+              <div className="w-screen ">
+                <div
+                  className={`flex w-screen py-3 ${
+                    animateHeader && "py-3"
+                  } mx-auto items-center justify-between trasition ease-in-out duration-500`}
+                >
+                  <Link href="/">
+                    <div className={`h-28 transition ease-in-out duration-500 cursor-pointer ${animateHeader && "h-16" }` } style={{ backgroundImage: `url(${logo.src})` }}>
+                      
+                    </div>
+                      
+                  </Link>
+                    
+                    {matches ? drawer : topBar }
+                    
+                    {!matches && 
+                        <Button
+                        variant="contained"
+                        className="whitespace-nowrap bg-blue-500 pt-2 pb-2 pl-3 pr-3 text-white transition duration-500 transform hover:-translate-y-1 "
+                        style={{ fontFamily: 'Montserrat', backgroundColor: 'rgb(35 130 218)'}}
+                        href="#contact"
+                        // onClick={()=>gaEventTracker('contact_head')}
+                        >
+                        Contact Us
+                        </Button>
+                    }
+
+                    <Popper
+                        open={openMenu}
+                        anchorEl={anchorEl}
+                        role={undefined}
+                        transition
+                        disablePortal
+                    >
+                        {({ TransitionProps, placement }) => (
+                        <Grow
+                            {...TransitionProps}
+                            style={{
+                            transformOrigin:
+                                placement === "bottom" ? "center top" : "center bottom",
+                            borderRadius: "5px",
+                            }}
+                        >
+                            <Paper className={{ root: classes.menu }} elevation={0}>
+                            <ClickAwayListener onClickAway={handleClose}>
+                                <MenuList
+                                onMouseOver={() => setOpenMenu(true)}
+                                onMouseLeave={handleClose}
+                                autoFocusItem={false}
+                                id="simple-menu"
+                                disablePadding
+                                onKeyDown={handleListKeyDown}
+                                >
+                                {routes[onHoverIndex].subRoute?.map((option, index) => (
+                                    <MenuItem
+                                    key={`${index}${option}`}
+                                    component={option.typeLink}
+                                    smooth="true"
+                                    to={option.link}
+                                    href={option.eLink}
+                                    target="_self"
+                                    classes={{ root: classes.menuItem }}
+                                    onClick={event => {
+                                        handleMenuItemClick(event, index);
+                                        setValue(option.activeIndex);
+                                        handleClose();
+                                    }}
+                                    selected={
+                                        index === selectedIndex && value === option.activeIndex
+                                    }
+                                    >
+                                    {option.name}
+                                    </MenuItem>
+                                ))}
+                                </MenuList>
+                            </ClickAwayListener>
+                            </Paper>
+                        </Grow>
+                        )}
+                    </Popper>
+                </div>
+              </div>
+            </header>
+            */}
             <ElevationScroll className='p-0 m-2'>
-                <AppBar position="fixed" color="default" className='p-0' style={{ zIndex: "999" }} id='header'>
-                <Toolbar variant="regular" style={{ padding: "0 1em 0 0" }}>
-                    <div className='flex items-center justify-between w-screen p-0' >
-                    <Link href="/">
-                        <img alt="company logo" id='logo' className='transform duration-500 ease h-28 cursor-pointer' src={logo.src} />
-                    </Link>
+                <AppBar position="fixed" color="default"  id='header'>
+                <Toolbar variant="regular" className={`w-full backdrop-filter backdrop-blur-lg bg-white/70 fixed z-999 trasition ease-in-out duration-1000 ${animateHeader && "shadow-xl"}`} style={{ padding: "0 1em 0 0" }}>
+                  <div
+                    className={`flex w-screen py-0 mx-auto items-center justify-between`}
+                  >
+                    <div className={`transition transform duration-1000 ease-in-out cursor-pointer scroll-smooth w-48 ${animateHeader ? "h-16" : "h-28"} `}>
+                      <a href="/">
+                          <img alt="company logo" id='logo' className='h-full' src={logo.src} />
+                      </a>
+                    </div>
+                    
                     
                     {matches ? drawer : topBar }
                     
@@ -682,6 +757,7 @@ function HeaderSite() {
                 </Toolbar>
                 </AppBar>
             </ElevationScroll>
+      
             <div 
                 //className={classes.toolbarMargin}
             />
