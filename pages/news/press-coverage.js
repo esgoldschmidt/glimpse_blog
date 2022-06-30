@@ -2,9 +2,9 @@ import React from 'react'
 import HeaderSite from '../../components/HeaderSite';
 import { useState } from 'react'
 import { Helmet } from "react-helmet";
-import pressc from '../../Components/data/allpress'
-import Dates from '../../Components/Dates'
-import PressCoverageItems from "../../Components/PressCoverageItems";
+import pressc from '../../components/data/allpress'
+import Dates from '../../components/Dates'
+import PressCoverageItems from "../../components/PressCoverageItems";
 
 const allDates = ['All', ...new Set(pressc.map(item => item.date))];
 
