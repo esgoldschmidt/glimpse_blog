@@ -54,7 +54,7 @@ function ourCompanies() {
                             </Box>
                             <Box p={2}>
                             
-                            <Typography variant="subtitle2" style={{ height: "4rem" }}>
+                            <Typography variant="subtitle2" className='text-gray-500' style={{ height: "4rem" }}>
                                 {comp.description}
                             </Typography>
                             </Box>
@@ -69,7 +69,7 @@ function ourCompanies() {
                             <div >
 
                             <a href={comp.link} className="cta" target="_blank">
-                                <span className='text-gray-600'>
+                                <span className='text-gray-500'>
                                 Visit Site <i className="fas fa-arrow-right"></i>
                                 </span>
                             </a>

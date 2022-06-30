@@ -20,7 +20,7 @@ const PostWidget = ( {categories, slug} ) => {
     return (
         <div>
             <div className='bg-white shadow-lg rounded-lg p-8 mb-8'>
-                <h3 className='text-xl mb-8 font-semibold border-b pb-4' >
+                <h3 className='text-xl mb-8 font-semibold border-b pb-4 text-gray-500' >
                     {slug ? 'Related posts' : 'Recent Posts'} 
 
                 </h3>
@@ -38,9 +38,9 @@ const PostWidget = ( {categories, slug} ) => {
                             <p className='text-gray-500 font-xs'>
                                 {moment(post.createdAt).format('MMM DD, YYYY')}
                             </p>
-                            <Link href={'/post/' + post.slug} key={post.title}>
+                            <a href={'/post/' + post.slug} key={post.title} className="transition duration-300 ease text-gray-500 hover:text-glimpse-blue" >
                                 {post.title}
-                            </Link>
+                            </a>
 
                         </div>
                     </div>

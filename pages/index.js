@@ -24,7 +24,7 @@ export default function Home({ posts }) {
                 />
             </Helmet>
             <HeaderSite />
-            <div className='home-content'>
+            <div className='home-content mt-24'>
             <Box
                 display="flex"
                 flexDirection="column"
@@ -45,7 +45,7 @@ export default function Home({ posts }) {
                 </div>      
                 <div align="center" className='w-full'>
                     <h2 className='p-2 font-light text-xl lg:text-2xl w-10/12' style={{ fontFamily: 'Montserrat'}}>
-                    The Glimpse Group <a href='https://ir.theglimpsegroup.com/' target='_blank' rel="noreferrer" className='transform duration-700 hover:ease hover:text-blue-400'>
+                    The Glimpse Group <a href='https://ir.theglimpsegroup.com/' target='_blank' rel="noreferrer" className='transform duration-700 hover:ease hover:text-glimpse-blue'>
                     (Nasdaq: VRAR)</a> is an immersive technology 
                     { !b830 ? <br /> : " " }
                     platform company, comprised of a diverse ecosystem of companies 
@@ -63,7 +63,7 @@ export default function Home({ posts }) {
             </div>
             <Clients />
 
-            <section className="bg-light p__y">
+            <section className="p__y">
                 <div className="max__width m__y">
                 <div className="container-text__width flex text-4xl flex-col items-center">
                     <h2 className='font-light text-gray-600 m-6' style={{ fontFamily: 'Montserrat' }}>Our Business Software & Solutions</h2>

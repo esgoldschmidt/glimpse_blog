@@ -15,16 +15,14 @@ const Header = () => {
         <div className='container mx-auto px-10 mb-8'>
             <div className='border-b w-full inline-block border-gray-300 py-8'>
                 <div className='md:float-left block'>
-                    <Link href='/'>
-                        <span className='cursor-pointer font-bold text-4xl text-gray-400'>
-                            At a Glimpse <span className='font-normal text-xl'>| The Glimpse Group Blog </span>
-                        </span>
-                    </Link>
+                    <span className='font-bold text-4xl text-gray-400 flex items-center'>
+                        At a Glimpse <span className='font-normal text-lg text-glimpse-blue mx-2'>| The Glimpse Group Blog </span>
+                    </span>
                 </div>
                 <div className='hidden md:float-left md:contents' >
                     { categories.map(( category ) => ( 
                         <Link key={ category.slug } href={'/category/' + category.slug}>
-                            <span className='md:float-right mx-2 mt-2 align-middle text-gray-400 font-semibold cursor-pointer hover:transition hover:duration-300 hover:ease hover:text-blue-400'>
+                            <span className='md:float-right mx-2 mt-2 align-middle text-gray-400 font-semibold cursor-pointer transition duration-300 ease hover:text-glimpse-blue hover:-translate-y-1'>
                                 { category.name }
                             </span>
                         </Link>

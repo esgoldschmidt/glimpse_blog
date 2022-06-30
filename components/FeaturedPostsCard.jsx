@@ -15,8 +15,8 @@ const FeaturedPostsCard = ({post}) => {
             <div className='min-w-350px w-full h-full text-center text-white flex rounded-b-lg flex-col place-content-evenly bg-gray-200'>
                 <Link href={'/post/' + post.slug} key={post.title} className='justify-items-center text-center w-350px'>
                     <div>
-                        <p className='text-center text-sm text-gray-800 cursor-pointer hover:transition hover:duration-300 hover:ease hover:text-blue-800 px-1 h-16 flex items-center'>{post.title}</p>
-                        <button className='bg-blue-400 px-4 py-2 mt-2 rounded-lg hover:transition hover:duration-300 hover:ease hover:bg-gray-400'>Read</button>
+                        <p className='text-center text-sm text-gray-500 cursor-pointer hover:transition hover:duration-300 ease-in-out hover:scale-105 px-1 h-16 flex items-center'>{post.title}</p>
+                        <button className='bg-glimpse-blue px-4 py-1 mt-2 rounded-lg hover:transition hover:duration-300 ease hover:bg-sky-600'>Read</button>
                     </div>
                     
                 </Link>
@@ -25,8 +25,8 @@ const FeaturedPostsCard = ({post}) => {
                         className='h-8 w-8 rounded-full'
                         src={post.author.photo.url}
                     />
-                    <div className='flex'>
-                        <p className='text-white ml-2 mr-2'>{post.author.name}</p>
+                    <div className='flex text-gray-500'>
+                        <p className='ml-2 mr-2'>{post.author.name}</p>
                         {moment(post.createdAt).format('MMM DD, YYYY')}
                     </div>
                     

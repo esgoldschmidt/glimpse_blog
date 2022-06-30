@@ -10,13 +10,13 @@ import { Link as SmoothLink } from 'react-scroll';
 import { ExternalLink } from 'react-external-link';
 import logo from "../assets/images/glimpseblue.svg";
 import { useRouter } from 'next/router'
-import { BiLinkExternal } from 'react-icons/fa';
+import externalLinkIcon from '../assets/images/External_link_font_awesome.svg.png';
 import { CSSTransition } from 'react-transition-group';
 
 
 function HeaderSite() {
     const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
-    const matches = useMediaQuery('(max-width:1213px)')
+    const matches = useMediaQuery('(max-width:1225px)')
     const [openDrawer, setOpenDrawer] = useState(false);
     const [value, setValue] = useState(0);
     const [onHoverIndex, setOnHoverIndex] = React.useState(1);
@@ -388,11 +388,11 @@ function HeaderSite() {
           <nav className="navbar navbar-expand-lg bg-transparent p-0 w-full" style={{ padding: '0px'}}>
             <div className="collapse navbar-collapse w-full" id="navbarSupportedContent">
               <ul className="flex w-full justify-center p-0 text-gray-700">
-                <li className={`nav-item ${location.pathname === "/" || location.pathname === "/home" ? "active" : ""} transition duration-500 transform hover:-translate-y-1 font-light`} style={{ fontFamily: 'Montserrat' }}>
-                  <a className="nav-link py-2.5 pr-2.5 text-gray-700" href="/">Home</a>
+                <li className={`nav-item ${location.pathname === "/" || location.pathname === "/home" ? "font-medium" : "font-light"} transition duration-500 transform hover:-translate-y-1`} style={{ fontFamily: 'Montserrat' }}>
+                  <a className="nav-link py-2.5 pr-2.5 text-gray-500 hover:text-sky-600" href="/">Home</a>
                 </li>
-                <li className={`nav-item ${location.pathname === "/about-glimpse" ? "active" : ""} transition duration-500 transform hover:-translate-y-1 font-light`} style={{ fontFamily: 'Montserrat' }}>
-                  <a className="nav-link p-2.5 text-gray-700" href="/about-glimpse">About Glimpse</a>
+                <li className={`nav-item ${location.pathname === "/about-glimpse" ? "font-medium" : "font-light"} transition duration-500 transform hover:-translate-y-1`} style={{ fontFamily: 'Montserrat' }}>
+                  <a className="nav-link p-2.5 text-gray-500 hover:text-sky-600" href="/about-glimpse">About Glimpse</a>
                 </li>
                 <li className={`nav-item dropdown ${location.pathname === "/industry-solutions/architecture-engineering-construction" || 
                 location.pathname === "/industry-solutions/k12-education" || 
@@ -402,46 +402,44 @@ function HeaderSite() {
                 location.pathname === "/industry-solutions/finance-data-visualization" ||
                 location.pathname === "/industry-solutions/healthcare" ||
                 location.pathname === "/industry-solutions/marketing" ||
-                location.pathname === "/industry-solutions/events-and-meetings" ? "active" : ""} transition duration-500 transform hover:-translate-y-1 font-light`} style={{ fontFamily: 'Montserrat' }}>
-                  <a className="nav-link p-2.5 dropdown-toggle text-gray-700" id="solutions" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                location.pathname === "/industry-solutions/events-and-meetings" ? "font-medium" : "font-light"} transition duration-500 transform hover:-translate-y-1`} style={{ fontFamily: 'Montserrat' }}>
+                  <a className="nav-link p-2.5 dropdown-toggle text-gray-500 hover:text-sky-600" id="solutions" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Industry Solutions
                   </a>
                   <div className="dropdown-menu" aria-labelledby="solutions" style={{ width: '200px' }}>
                     {/* <div className="dropdown-divider"></div> */}
-                    <a className={`dropdown-item hover:bg-blue-300 text-sm ${location.pathname === "/industry-solutions/architecture-engineering-construction" ? "active" : ""}`} href="/industry-solutions/architecture-engineering-construction">AEC</a>
-                    <a className={`dropdown-item hover:bg-blue-300 text-sm ${location.pathname === "/industry-solutions/k12-education" ? "active" : ""}`} href="/industry-solutions/k12-education">K-12 Education</a>
-                    <a className={`dropdown-item hover:bg-blue-300 text-sm ${location.pathname === "/industry-solutions/higher-education" ? "active" : ""}`} href="/industry-solutions/higher-education">Higher Education</a>
-                    <a className={`dropdown-item hover:bg-blue-300 text-sm ${location.pathname === "/industry-solutions/food-hospitality" ? "active" : ""}`} href="/industry-solutions/food-hospitality">Food & Hospitality</a>
-                    <a className={`dropdown-item hover:bg-blue-300 text-sm ${location.pathname === "/industry-solutions/professional-training" ? "active" : ""}`} href="/industry-solutions/professional-training">Professional Training</a>
-                    <a className={`dropdown-item hover:bg-blue-300 text-sm ${location.pathname === "/industry-solutions/finance-data-visualization" ? "active" : ""}`} href="/industry-solutions/finance-data-visualization">Data Visualization</a>
-                    <a className={`dropdown-item hover:bg-blue-300 text-sm ${location.pathname === "/industry-solutions/healthcare" ? "active" : ""}`} href="/industry-solutions/healthcare">Healthcare</a>
-                    <a className={`dropdown-item hover:bg-blue-300 text-sm ${location.pathname === "/industry-solutions/marketing" ? "active" : ""}`} href="/industry-solutions/marketing">Marketing</a>
-                    <a className={`dropdown-item hover:bg-blue-300 text-sm ${location.pathname === "/industry-solutions/events-and-meetings" ? "active" : ""}`} href="/industry-solutions/events-and-meetings">Events & Meetings</a>
+                    <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/industry-solutions/architecture-engineering-construction" ? "bg-glimpse-blue text-white" : ""}`} href="/industry-solutions/architecture-engineering-construction">AEC</a>
+                    <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/industry-solutions/k12-education" ? "bg-glimpse-blue text-white" : ""}`} href="/industry-solutions/k12-education">K-12 Education</a>
+                    <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/industry-solutions/higher-education" ? "bg-glimpse-blue text-white" : ""}`} href="/industry-solutions/higher-education">Higher Education</a>
+                    <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/industry-solutions/food-hospitality" ? "bg-glimpse-blue text-white" : ""}`} href="/industry-solutions/food-hospitality">Food & Hospitality</a>
+                    <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/industry-solutions/professional-training" ? "bg-glimpse-blue text-white" : ""}`} href="/industry-solutions/professional-training">Professional Training</a>
+                    <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/industry-solutions/finance-data-visualization" ? "bg-glimpse-blue text-white" : ""}`} href="/industry-solutions/finance-data-visualization">Data Visualization</a>
+                    <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/industry-solutions/healthcare" ? "bg-glimpse-blue text-white" : ""}`} href="/industry-solutions/healthcare">Healthcare</a>
+                    <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/industry-solutions/marketing" ? "bg-glimpse-blue text-white" : ""}`} href="/industry-solutions/marketing">Marketing</a>
+                    <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/industry-solutions/events-and-meetings" ? "bg-glimpse-blue text-white" : ""}`} href="/industry-solutions/events-and-meetings">Events & Meetings</a>
                   </div>
                 </li>
-                <li className={`nav-item dropdown ${location.pathname === "/news/press-releases" || location.pathname === "/news/glimpse-blog" || location.pathname === "/news/press-coverage" ? "active" : ""} transition duration-500 transform hover:-translate-y-1 font-light`} style={{ fontFamily: 'Montserrat' }}>
-                  <a className="nav-link p-2.5 dropdown-toggle text-gray-700" href="#" id="news" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li className={`nav-item dropdown ${location.pathname === "/news/press-releases" || location.pathname === "/news/glimpse-blog" || location.pathname === "/news/press-coverage" ? "font-medium" : "font-light"} transition duration-500 transform hover:-translate-y-1`} style={{ fontFamily: 'Montserrat' }}>
+                  <a className="nav-link p-2.5 dropdown-toggle text-gray-500 hover:text-sky-600" href="#" id="news" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     News
                   </a>
                   <div className="dropdown-menu" aria-labelledby="news">
-                    <a className={`dropdown-item hover:bg-blue-300 text-sm ${location.pathname === "/news/press-releases" ? "active" : ""}`} href="/news/press-releases">Press Releases</a>
-                    <a className={`dropdown-item hover:bg-blue-300 text-sm ${location.pathname === "/news/glimpse-blog" ? "active" : ""}`} href="/news/glimpse-blog">Glimpse Blog</a>
-                    <a className={`dropdown-item hover:bg-blue-300 text-sm ${location.pathname === "/news/press-coverage" ? "active" : ""}`} href="/news/press-coverage">Press Coverage</a>
+                    <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/news/press-releases" ? "bg-glimpse-blue text-white" : ""}`} href="/news/press-releases">Press Releases</a>
+                    <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/news/glimpse-blog" ? "bg-glimpse-blue text-white" : ""}`} href="/news/glimpse-blog">Glimpse Blog</a>
+                    <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/news/press-coverage" ? "bg-glimpse-blue text-white" : ""}`} href="/news/press-coverage">Press Coverage</a>
                   </div>
                 </li>
-                <li className={`nav-item ${location.pathname === "/our-work" ? "active" : ""} transition duration-500 transform hover:-translate-y-1 font-light`} style={{ fontFamily: 'Montserrat' }}>
-                  <a className="nav-link p-2.5 text-gray-700" href="/our-work">Our Work</a>
+                <li className={`nav-item ${location.pathname === "/our-work" ? "font-medium" : "font-light"} transition duration-500 transform hover:-translate-y-1`} style={{ fontFamily: 'Montserrat' }}>
+                  <a className="nav-link p-2.5 text-gray-500 hover:text-sky-600" href="/our-work">Our Work</a>
                 </li>
-                <li className={`nav-item ${location.pathname === "/our-companies" ? "active" : ""} transition duration-500 transform hover:-translate-y-1 font-light`} style={{ fontFamily: 'Montserrat' }}>
-                  <a className="nav-link p-2.5 text-gray-700" href="/our-companies">Our Companies</a>
+                <li className={`nav-item ${location.pathname === "/our-companies" ? "font-medium" : "font-light"} transition duration-500 transform hover:-translate-y-1`} style={{ fontFamily: 'Montserrat' }}>
+                  <a className="nav-link p-2.5 text-gray-500 hover:text-sky-600" href="/our-companies">Our Companies</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link pl-2.5 py-2.5 transition duration-500 transform hover:-translate-y-1 font-light text-gray-700" style={{ fontFamily: 'Montserrat' }} href="https://ir.theglimpsegroup.com/" target='_blank'>
-                  <div className='flex'>
+                  <a className="nav-link pl-2.5 py-2.5 transition duration-500 ease transform hover:-translate-y-1 font-light text-gray-500 hover:text-sky-600" style={{ fontFamily: 'Montserrat' }} href="https://ir.theglimpsegroup.com/" target='_blank'>
+                  <div className='flex justify-center items-center'>
                     Investor Relations
-                    <div className='whitespace-nowrap flex items-center'>
-                      
-                    </div>
+                    <img src={externalLinkIcon.src} className='ml-2 h-4 w-4'/>
                   </div>
                   </a>
                 </li>
@@ -478,7 +476,7 @@ function HeaderSite() {
             
               {routes.map((route, index) =>
                 route.subRoute !== null ? (
-                  <div>
+                  <div key={index}>
                   <Divider />
                   <Accordion
                     elevation={0}
@@ -524,7 +522,7 @@ function HeaderSite() {
                   </Accordion>
                   </div>
                 ) : (
-                  <div>
+                  <div key={index}>
                   <Divider />
                   <ListItemButton
                     //divider
@@ -703,18 +701,18 @@ function HeaderSite() {
                     {matches ? drawer : topBar }
                     
                     {!matches && 
-                        <Button
+                        <div
                         variant="contained"
-                        className={`whitespace-nowrap bg-blue-500 pt-2 pb-2 pl-3 pr-3 text-white transition duration-700 transform hover:-translate-y-1 mr-4`}
+                        className={`btn whitespace-nowrap bg-glimpse-blue hover:bg-sky-600 pt-2 pb-2 pl-3 pr-3 text-white transition duration-700 transform hover:-translate-y-1 mr-4`}
                         style={{ fontFamily: 'Montserrat', 
-                                  backgroundColor: 'rgb(35 130 218)',
+                                  
                                   margin: '0 1.5em 0 0' 
                                   }}
                         href="#contact"
                         // onClick={()=>gaEventTracker('contact_head')}
                         >
                         Contact Us
-                        </Button>
+                        </div>
                     }
 
                     <Popper

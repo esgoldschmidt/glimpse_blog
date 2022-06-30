@@ -6,7 +6,7 @@ function Dates({filter, dates}) {
         {
           dates.map((date, i) => {
             return <button
-            className="btn btn-primary p-2 m-2 w-20 "
+            className="btn bg-glimpse-blue hover:bg-sky-600 text-white p-2 m-2 w-20 "
             onClick={()=> filter (date)} key={i}>{date}
             </button>
           })

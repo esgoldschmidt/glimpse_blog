@@ -178,11 +178,11 @@ function aboutGlimpse() {
                                 Columbia, MBA
                             </p>
                             <div className="leader-social">
-                                <a href="https://www.linkedin.com/in/maydan-rothblum-9954a/" target="_blank">
+                                <a href="https://www.linkedin.com/in/maydan-rothblum-9954a/" target="_blank" className='mr-3'>
                                     <i className="fa fa-linkedin-square"></i>
                                 </a>
                                 <a className="email" href="mailto:maydan@theglimpsegroup.com">
-                                <i className="far fa-envelope"></i>
+                                    <i className="far fa-envelope"></i>
                                 </a>
                             </div>
                             </div>

@@ -39,7 +39,7 @@ function Clients() {
 
     return (
         <React.Fragment>
-            <div className='bg-white shadow-lg rounded-lg p-4 mb-8'>
+            <div className='bg-white shadow-lg p-4 mb-8 mx-4'>
                 <Carousel 
                     cols={5} 
                     rows={2} 

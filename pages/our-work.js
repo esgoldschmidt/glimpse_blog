@@ -30,16 +30,16 @@ function ourWork() {
                                 <img src={ item.image }  alt={item.title} className="rounded-t-lg" />
                             </div>
                             <div className='card-content px-4 pt-4'>
-                                <div className='h-14 text-xl flex items-center font-medium'>
+                                <div className='h-14 text-xl flex items-center font-medium text-gray-500'>
                                     <h4>{item.title}</h4>
                                 </div>
                                 <div className='card-content-date pt-4'>
-                                    <i className="far fa-calendar-alt"></i>
-                                    <span> { item.date }</span>
+                                    <i className="far fa-calendar-alt text-glimpse-blue mr-2"></i>
+                                    <span className='text-gray-500'> { item.date }</span>
                                 </div>
                             </div>
                             <a href={`/our-work/${item.title}`} className="cta w-40">
-                                <span className='text-gray-600'>
+                                <span className='text-gray-500'>
                                     View <i className="fas fa-arrow-right"></i>
                                 </span>
                             </a>

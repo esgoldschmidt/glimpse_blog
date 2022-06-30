@@ -196,13 +196,13 @@ function ContactForm() {
               <div className='flex-col content-center w-full'>
                 <div className='flex justify-center'>
                   <button
-                    className="btn m-2 bg-blue-400 hover:bg-blue-500 text-white transform duration-500 hover:ease px-2 py-1 rounded-lg w-32 "
+                    className="btn m-2 bg-glimpse-blue hover:bg-sky-600 text-white transform duration-500 hover:ease px-2 py-1 rounded-lg w-32 "
                     type="submit"
                   >
                     Submit
                   </button>
                   <button
-                    className="btn m-2 bg-blue-400 hover:bg-blue-500 text-white transform duration-500 hover:ease py-1 rounded-lg w-32"  
+                    className="btn m-2 bg-glimpse-blue hover:bg-sky-600 text-white transform duration-500 hover:ease py-1 rounded-lg w-32"  
                     onClick={resetForm}
                   >
                     Reset
