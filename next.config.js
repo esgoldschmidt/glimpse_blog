@@ -20,6 +20,11 @@ module.exports = {
       ]
     });
 
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      // your aliases
+    }
+
     return config;
   }
 
