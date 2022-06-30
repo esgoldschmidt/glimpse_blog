@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import HeaderSite from '../components/HeaderSite';
 import FooterSite from '../components/FooterSite';
 import ContactForm from '../components/ContactForm'
@@ -9,10 +9,28 @@ import VideoJS from "../components/VideoJS";
 import Clients from "../components/Clients";
 import Solutions from "../components/Solutions";
 import Companies from "../components/Companies";
+import PDF from "../components/pdfViewer"
+import { useRouter } from 'next/router'
+import allreleases from '../components/data/Releases/allreleases'
 
 function home() {
     const [companyItems] = useState(glimpseCompanies);
+    const [isLoading, setIsLoading]=useState(true)
+    const [pdfRef, setPdfRef] = useState()
     const b830 = useMediaQuery('(max-width:830px)')
+    const router = useRouter()
+
+    useEffect(() => {
+        if (router.isReady) {
+            // Code using query
+            allreleases.filter(item => item.slug === router.query.release).map((item, index) => (
+                setPdfRef(item.pdfPage)
+            ))
+            setIsLoading(false)
+        }
+        }, [router.isReady]);
+
+    if (isLoading) return <div>loading</div>
     return (
         <div className='HomePage'>
             <Helmet>
@@ -61,7 +79,7 @@ function home() {
                 <h2 className="text-4xl text-gray-600 font-light" style={{ fontFamily: 'Montserrat' }}>Our Clients & Partners</h2>
             </div>
             <Clients />
-
+            <PDF pdf={ pdfRef } />
             <section className="bg-light p__y">
                 <div className="max__width m__y">
                 <div className="container-text__width flex text-4xl flex-col items-center">

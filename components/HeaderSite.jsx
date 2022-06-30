@@ -11,6 +11,7 @@ import { ExternalLink } from 'react-external-link';
 import logo from "../assets/images/glimpseblue.svg";
 import { useRouter } from 'next/router'
 import { BiLinkExternal } from 'react-icons/fa';
+import { CSSTransition } from 'react-transition-group';
 
 
 function HeaderSite() {
@@ -31,10 +32,21 @@ function HeaderSite() {
     const [logoWidth, setLogoWidth] = useState("11.66rem");
     const [animateHeader, setAnimateHeader] = useState(false);
     // const gaEventTracker = useAnalyticsEventTracker('Header');
+    const [inProp, setInProp] = useState(false);
 
     useEffect(() => {
       const listener = () => {
         if (window.scrollY > 50) {
+          <CSSTransition
+            // in={showMessage}
+            timeout={300}
+            //classNames="alert"
+            unmountOnExit
+            // onEnter={() => setShowButton(false)}
+            //onExited={() => setShowButton(true)}
+          >
+
+          </CSSTransition>
           setAnimateHeader(true);
         } else setAnimateHeader(false);
       };
@@ -574,7 +586,7 @@ function HeaderSite() {
             disableRipple
           >
             <MenuIcon 
-              className="w-14 h-14"
+              style={{ height: '56px', width: '56px' }}
             />
           </IconButton>
         </React.Fragment>
@@ -674,15 +686,18 @@ function HeaderSite() {
             */}
             <ElevationScroll className='p-0 m-2'>
                 <AppBar position="fixed" color="default"  id='header'>
-                <Toolbar variant="regular" className={`w-full backdrop-filter backdrop-blur-lg bg-white/70 fixed z-999 trasition ease-in-out duration-1000 ${animateHeader && "shadow-xl"}`} style={{ padding: "0 1em 0 0" }}>
+                <div className={`w-full backdrop-filter backdrop-blur-lg bg-white/70 fixed z-999 `} style={{ padding: "0 1em 0 0" }}>
                   <div
                     className={`flex w-screen py-0 mx-auto items-center justify-between`}
                   >
-                    <div className={`transition transform duration-1000 ease-in-out cursor-pointer scroll-smooth w-48 ${animateHeader ? "h-16" : "h-28"} `}>
+                    <div className='w-52'>
                       <a href="/">
-                          <img alt="company logo" id='logo' className='h-full' src={logo.src} />
+                        <div className={`transition transform duration-1000 ease-in-out ${animateHeader ? "h-16" : "h-28"}`}>
+                          <img alt="company logo" id='logo' className={`h-full`} src={logo.src} />
+                        </div>
                       </a>
                     </div>
+                    
                     
                     
                     {matches ? drawer : topBar }
@@ -690,8 +705,11 @@ function HeaderSite() {
                     {!matches && 
                         <Button
                         variant="contained"
-                        className="whitespace-nowrap bg-blue-500 pt-2 pb-2 pl-3 pr-3 text-white transition duration-500 transform hover:-translate-y-1 "
-                        style={{ fontFamily: 'Montserrat', backgroundColor: 'rgb(35 130 218)'}}
+                        className={`whitespace-nowrap bg-blue-500 pt-2 pb-2 pl-3 pr-3 text-white transition duration-700 transform hover:-translate-y-1 mr-4`}
+                        style={{ fontFamily: 'Montserrat', 
+                                  backgroundColor: 'rgb(35 130 218)',
+                                  margin: '0 1.5em 0 0' 
+                                  }}
                         href="#contact"
                         // onClick={()=>gaEventTracker('contact_head')}
                         >
@@ -753,15 +771,14 @@ function HeaderSite() {
                         )}
                     </Popper>
                     </div>
-                    
-                </Toolbar>
+                </div>
                 </AppBar>
             </ElevationScroll>
       
             <div 
                 //className={classes.toolbarMargin}
             />
-            </div>
+          </div>
     )
 }
 
