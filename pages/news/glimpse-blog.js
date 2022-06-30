@@ -10,7 +10,6 @@ export default function Blog({ posts }) {
     <div className="container mx-auto px-10 mb-8">
       <Head>
         <title>VR and AR Insights | Industry news and key trends </title>
-        <link rel='icon' href='/favicon.ico' />
         <meta
           name="description"
           content="Insightful and thought-provoking articles on the world of VR, AR, and the metaverse, according to industry experts."
