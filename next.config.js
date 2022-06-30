@@ -4,9 +4,9 @@ module.exports = {
   future: {
     webpack5: true
   },
-  webpack: (config, options) => {
+  webpack: (config) => {
     // load worker files as a urls with `file-loader`
-    config.module.rules.push({
+    config.module.rules.unshift({
       test: /pdf\.worker\.(min\.)?js/,
       use: [
         {
@@ -16,11 +16,11 @@ module.exports = {
             publicPath: "_next/static/worker",
             outputPath: "static/worker"
           }
-        },
-      ],
-    })
+        }
+      ]
+    });
 
     return config;
-  },
+  }
 
 }
