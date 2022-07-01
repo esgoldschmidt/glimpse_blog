@@ -58,9 +58,6 @@ export default function Home({ posts }) {
                 </Box>
                 <VideoJS />
             </div>
-            <div className="flex w-full justify-center mt-10 mb-6">
-                <h2 className="text-4xl text-gray-600 font-light" style={{ fontFamily: 'Montserrat' }}>Our Clients & Partners</h2>
-            </div>
             <Clients />
 
             <section className="p__y">
@@ -74,7 +71,6 @@ export default function Home({ posts }) {
                         Marketing to Healthcare.
                     </p>
                     </div>
-                    
                 </div>
                 <Solutions />
                 </div>

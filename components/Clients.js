@@ -39,7 +39,10 @@ function Clients() {
 
     return (
         <React.Fragment>
-            <div className='bg-white shadow-lg p-4 mb-8 mx-4'>
+            <div className='bg-white p-4 mb-8'>
+                <div className="flex w-full justify-center mt-10 mb-6">
+                    <h2 className="text-4xl text-gray-600 font-light" style={{ fontFamily: 'Montserrat' }}>Our Clients & Partners</h2>
+                </div>
                 <Carousel 
                     cols={5} 
                     rows={2} 

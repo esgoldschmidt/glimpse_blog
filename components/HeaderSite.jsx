@@ -684,7 +684,7 @@ function HeaderSite() {
             */}
             <ElevationScroll className='p-0 m-2'>
                 <AppBar position="fixed" color="default"  id='header'>
-                <div className={`w-full backdrop-filter backdrop-blur-lg bg-white/70 fixed z-999 `} style={{ padding: "0 1em 0 0" }}>
+                <div className={`w-full backdrop-filter backdrop-blur-lg bg-white fixed z-999 `} style={{ padding: "0 1em 0 0" }}>
                   <div
                     className={`flex w-screen py-0 mx-auto items-center justify-between`}
                   >
