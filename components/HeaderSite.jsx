@@ -271,7 +271,7 @@ function HeaderSite() {
               name: "Press Coverage",
               typeLink: Link,
               link: "/news/press-coverage",
-              target: "_self",
+              target: "_blank",
               activeIndex: 3,
               selectedIndex: 2,
               disable: false,
@@ -426,7 +426,7 @@ function HeaderSite() {
                   <div className="dropdown-menu" aria-labelledby="news">
                     <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/news/press-releases" ? "bg-glimpse-blue text-white" : ""}`} href="/news/press-releases">Press Releases</a>
                     <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/news/glimpse-blog" ? "bg-glimpse-blue text-white" : ""}`} href="/news/glimpse-blog">Glimpse Blog</a>
-                    <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/news/press-coverage" ? "bg-glimpse-blue text-white" : ""}`} href="/news/press-coverage">Press Coverage</a>
+                    <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/news/press-coverage" ? "bg-glimpse-blue text-white" : ""}`} href="/news/press-coverage" target="_blank">Press Coverage</a>
                   </div>
                 </li>
                 <li className={`nav-item ${location.pathname === "/our-work" ? "font-medium" : "font-light"} transition duration-500 transform hover:-translate-y-1`} style={{ fontFamily: 'Montserrat' }}>
