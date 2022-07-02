@@ -1,4 +1,4 @@
-import { PostCard, Categories, PostWidget, FeaturedPosts } from "../../components";
+import { PostCard, Categories, PostWidget, FeaturedPosts, FeaturedPostsCard } from "../../components";
 import { getPosts } from '../../services';
 import HeaderSite from '../../components/HeaderSite.jsx'
 import Header from '../../components/Header.jsx'
@@ -16,23 +16,13 @@ export default function Blog({ posts }) {
         />
       </Head>
       <HeaderSite />
-      <div className='mt-28'>
+      <div className='mt-32'>
         <Header />
       </div>
-      
-      <FeaturedPosts />
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-8 col-span-1">
-          {posts.map((post, index) => (
-            <PostCard key={index} post={post.node} />
-          ))}
-        </div>
-        <div className="lg:col-span-4 col-span-1">
-          <div className="lg:sticky relative top-8">
-            <PostWidget />
-            <Categories />
-          </div>
-        </div>
+      <div className="text-center gap-4 flex flex-wrap justify-center pb-4 w-full">
+        {posts.map((post, index) => (
+          <FeaturedPostsCard key={index} post={post.node} />
+        ))}
       </div>
     </div>
   );

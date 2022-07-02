@@ -19,35 +19,12 @@ const FeaturedPosts = () => {
     
     return (
         <div>
-            <div className='bg-white shadow-lg rounded-lg p-8 mb-8'>
-                <Carousel 
-                    cols={4} 
-                    rows={2} 
-                    gap={10} 
-                    loop
-                    className='bg-white'
-                    responsiveLayout={[
-                        {
-                        breakpoint: 1300,
-                        cols: 3
-                        },
-                        {
-                        breakpoint: 1025,
-                        cols: 2
-                        }
-                    ]}
-                    mobileBreakpoint={670}
-                    >
-                    {!isLoading && 
-                        featuredPosts.map((post, index) => (
-                            <Carousel.Item key={index}>
-                                <div className='m-2'>
-                                    <FeaturedPostsCard post={post} />
-                                </div>
-                            </Carousel.Item> 
-                        ))
-                    }
-                </Carousel>
+            <div className="press-content text-center gap-4 flex flex-wrap justify-center pb-4 w-full">
+                {!isLoading && 
+                    featuredPosts.map((post, index) => (  
+                        <FeaturedPostsCard post={post} />  
+                    ))
+                }
             </div>
         </div>
     )

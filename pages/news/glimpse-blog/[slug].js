@@ -1,12 +1,12 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import Header from '../../components/Header.jsx'
-import HeaderSite from '../../components/HeaderSite.jsx'
+import Header from '../../../components/Header.jsx'
+import HeaderSite from '../../../components/HeaderSite.jsx'
 import Head from 'next/head';
 
-import { getPosts, getPostDetails } from '../../services';
+import { getPosts, getPostDetails } from '../../../services';
 
-import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader  } from '../../components';
+import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader  } from '../../../components';
 
 const PostDetails = ({ post }) => {
     const router = useRouter()
@@ -16,7 +16,7 @@ const PostDetails = ({ post }) => {
     }
     return (
         
-        <div className='container mx-auto px-10 mb-8'>
+        <div className='mx-4 mb-8'>
             <Head>
                 <title>{post.title}</title>
                 <meta
@@ -25,20 +25,19 @@ const PostDetails = ({ post }) => {
                 />
             </Head>
             <HeaderSite />
-            <div className='mt-28'>
+            <div className='mt-32'>
                 <Header />
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-                <div className='col-span-1 lg:col-span-8'>
+            <div className='grid grid-cols-1 lg:grid-cols-12 gap-8'>
+                <div className='col-span-1 lg:col-span-9'>
                     <PostDetail post={post} />
                     <Author author={post.author} />
                     <CommentsForm slug={post.slug}/>
                     <Comments slug={post.slug} />
                 </div>
-                <div className='col-span-1 lg:col-span-4'>
+                <div className='col-span-1 lg:col-span-3'>
                     <div className='relative lg:sticky top-8'>
                         <PostWidget slug={post.slug} categories={post.categories.map((category) => category.slug)} />
-                        <Categories />
                     </div>
                 </div>
             </div>
