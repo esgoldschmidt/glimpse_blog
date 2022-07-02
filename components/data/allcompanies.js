@@ -163,7 +163,7 @@ const companies = [
     link: "https://brightlineinteractive.com/",
     alt: "Brightline Interactive",
     description:
-      "Provider of VR and AR integration, experiential training simulations, and immersive experiences for government and commercial clients.",
+      "Provider of VR and AR integration, training simulations, and immersive experiences for government and commercial clients.",
     class: "hexagon__content hexagon__content-mb",
     invert: false,
   },
