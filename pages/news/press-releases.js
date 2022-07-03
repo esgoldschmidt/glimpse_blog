@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import ReleaseItems from '../../components/PressReleaseItems';
-import { getPressReleases } from '../../services';
-import releases from '../../components/data/Releases/allreleases';
+import { getPressReleases } from '../../services'; 
 import Dates from '../../components/Dates'
 import { Helmet } from "react-helmet";
 import { useState } from 'react';

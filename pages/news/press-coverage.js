@@ -1,27 +1,48 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HeaderSite from '../../components/HeaderSite';
 import { useState } from 'react'
 import { Helmet } from "react-helmet";
 import pressc from '../../components/data/allpress'
 import Dates from '../../components/Dates'
 import PressCoverageItems from "../../components/PressCoverageItems";
+import { getPressCoverage } from '../../services';
 
-const allDates = ['All', ...new Set(pressc.map(item => item.date))];
 
-function pressCoverage() {
+
+function pressCoverage( {pressCoverageItems} ) {
+    const allDates = ['All', ...new Set(pressCoverageItems.map(item => item.node.coverageYear))];
     const [dates] = useState(allDates);
-    const [pressItems, setPressItems] = useState(pressc);
+    const [pressItems, setPressItems] = useState(pressCoverageItems);
+    const [date, setDate] = useState('Start')
 
-    const filter = (date) =>{
-        if(date === 'All'){
-            setPressItems(pressc)
+    const filter = (dateIn) =>{
+        if(dateIn === 'All'){
+            setPressItems(pressCoverageItems)
+            setDate('All')
             return;
         }
-        const filteredData  = pressc.filter((item)=>{
-            return item.date === date;
-        })
+        let filteredData;
+        if (dateIn === 'Start'){
+            filteredData  = pressCoverageItems.filter((item)=>{
+                return item.node.coverageYear == '2022';
+            })
+        } else {
+            filteredData  = pressCoverageItems.filter((item)=>{
+                setDate(dateIn)
+                return item.node.coverageYear === dateIn;
+            })
+        }
         setPressItems(filteredData);
     }
+
+    useEffect(() => {
+        if(date === 'Start'){
+        let pressCoverageItems2022 = pressCoverageItems.filter((item) => {
+            return item.node.coverageYear == '2022';
+        })
+        setPressItems(pressCoverageItems2022)
+        }
+    }, [date])
 
     return (
         <div>
@@ -50,3 +71,11 @@ function pressCoverage() {
 }
 
 export default pressCoverage
+
+// Fetch data at build time
+export async function getStaticProps() {
+    const pressCoverageItems = (await getPressCoverage()) || [];
+    return {
+      props: { pressCoverageItems },
+    };
+  }

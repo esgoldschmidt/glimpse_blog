@@ -62,6 +62,31 @@ export const getPressReleases = async () => {
     return result.pressReleasesConnection.edges.reverse();
 }
 
+export const getPressCoverage = async () => {
+    const query = gql`
+        query MyQuery {
+            pressCoveragesConnection {
+                edges {
+                    node {
+                        coverageDate
+                        coverageYear
+                        mediaOutlet
+                        linkToCoverage
+                        title
+                        featuredImage {
+                            url
+                        }
+                    }
+                }
+            }
+        }
+    `
+
+    const result = await request(graphqlAPI, query);
+
+    return result.pressCoveragesConnection.edges.reverse();
+}
+
 export const getPostDetails = async (slug) => {
     const query = gql`
         query GetPostDetails($slug: String!) {
