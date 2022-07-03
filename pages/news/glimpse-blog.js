@@ -8,7 +8,7 @@ import Head from 'next/head';
 
 export default function Blog({ posts }) {
   return (
-    <div className="container mx-auto px-10 mb-8">
+    <div>
       <Head>
         <title>VR and AR Insights | Industry news and key trends </title>
         <meta
@@ -17,14 +17,17 @@ export default function Blog({ posts }) {
         />
       </Head>
       <HeaderSite />
-      <div className='mt-32'>
-        <Header />
+      <div className="container mx-auto px-10 mb-8">
+        <div className='mt-32'>
+          <Header />
+        </div>
+        <div className="text-center gap-4 flex flex-wrap justify-center pb-4 w-full">
+          {posts.map((post, index) => (
+            <FeaturedPostsCard key={index} post={post.node} />
+          ))}
+        </div>
       </div>
-      <div className="text-center gap-4 flex flex-wrap justify-center pb-4 w-full">
-        {posts.map((post, index) => (
-          <FeaturedPostsCard key={index} post={post.node} />
-        ))}
-      </div>
+      
       <FooterSite />
     </div>
   );
