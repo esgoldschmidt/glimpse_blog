@@ -26,7 +26,7 @@ export default function Home({ posts }) {
             </Helmet>
             <HeaderSite />
         
-            <div className='home-content '>
+            <div className='home-content mt-28'>
             <Box
                 display="flex"
                 flexDirection="column"
