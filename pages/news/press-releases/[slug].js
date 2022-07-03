@@ -5,24 +5,11 @@ import HeaderSite from '../../../components/HeaderSite';
 import FooterSite from '../../../components/FooterSite';
 import { useRouter } from 'next/router'
 import Head from 'next/head';
-import dynamic from "next/dynamic";
-import PDF from "../../../components/pdfViewer"
 
 import { getPressReleases, getPressReleaseDetails } from '../../../services'; 
 
-const PDFViewer = dynamic(() => import("../../../components/pdfViewer"), {
-  ssr: false
-});
-
 
 function SingleRelease ({ pressRelease }) {
-  const viewer = useRef(null);
-  const [numPages, setNumPages] = useState(null);
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
-
   const router = useRouter()
 
   if (router.isFallback){

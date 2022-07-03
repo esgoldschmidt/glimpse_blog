@@ -9,7 +9,6 @@ import VideoJS from "../components/VideoJS";
 import Clients from "../components/Clients";
 import Solutions from "../components/Solutions";
 import Companies from "../components/Companies";
-import PDF from "../components/pdfViewer"
 import { useRouter } from 'next/router'
 import allreleases from '../components/data/Releases/allreleases'
 

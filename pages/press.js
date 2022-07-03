@@ -10,7 +10,6 @@ import Clients from "../components/Clients";
 import Solutions from "../components/Solutions";
 import Companies from "../components/Companies";
 import Loader from "../components/Loader"
-import PDF from "../components/pdfViewer"
 import { useRouter } from 'next/router'
 import allreleases from '../components/data/Releases/allreleases'
 
@@ -51,7 +50,6 @@ function press() {
                 <h1 className='text-center text-2xl m-4 w-11/12 lg:w-3/4'>{title}</h1>
                 <h3 className='text-center m-2'>{ date }</h3>
                 <div className='home-content flex justify-center'>
-                    <PDF pdf={ pdfRef } />
                 </div>
             </div>
             <div className='m-8'>

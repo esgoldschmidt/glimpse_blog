@@ -9,7 +9,6 @@ import VideoJS from "../../../components/VideoJS";
 import Clients from "../../../components/Clients";
 import Solutions from "../../../components/Solutions";
 import Companies from "../../../components/Companies";
-import PDF from "../../../components/pdfViewer"
 import { useRouter } from 'next/router'
 import allreleases from '../../../components/data/Releases/allreleases'
 
@@ -79,7 +78,6 @@ function home() {
                 <h2 className="text-4xl text-gray-600 font-light" style={{ fontFamily: 'Montserrat' }}>Our Clients & Partners</h2>
             </div>
             <Clients />
-            <PDF pdf={ pdfRef } />
             <section className="bg-light p__y">
                 <div className="max__width m__y">
                 <div className="container-text__width flex text-4xl flex-col items-center">
