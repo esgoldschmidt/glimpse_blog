@@ -1,19 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 import allreleases from '../../../components/data/Releases/allreleases'
+import { Loader, PostDetail, Author } from '../../../components'
+import HeaderSite from '../../../components/HeaderSite';
+import FooterSite from '../../../components/FooterSite';
 import { useRouter } from 'next/router'
-import { Helmet } from "react-helmet";
+import Head from 'next/head';
 import dynamic from "next/dynamic";
 import PDF from "../../../components/pdfViewer"
+
+import { getPressReleases, getPressReleaseDetails } from '../../../services'; 
 
 const PDFViewer = dynamic(() => import("../../../components/pdfViewer"), {
   ssr: false
 });
 
 
-function SingleRelease () {
+function SingleRelease ({ pressRelease }) {
   const viewer = useRef(null);
   const [numPages, setNumPages] = useState(null);
-  const [isLoading, setIsLoading]=useState(true)
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
@@ -21,35 +25,61 @@ function SingleRelease () {
 
   const router = useRouter()
 
-  useEffect(() => {
-    if (router.isReady) {
-        alert(router.query.slug)
-        // Code using query
-        setIsLoading(false)
-    }
-    }, [router.isReady]);
+  if (router.isFallback){
+    return <Loader />
+  }
 
-  if (isLoading) return <div>loading</div>
+  console.log( pressRelease )
+
   return (
     <div className="SingleRelease">
-      <Helmet>
-        <title>Press Release | The Glimpse Group</title>
-        <meta
+      <Head>
+          <title>{pressRelease.title}</title>
+          <meta
           name="description"
-          content="The Glimpse Group is a Virtual Reality & Augmented Reality Platform Company Comprised of Multiple Software & Services Subsidiaries Creating VR/AR Solutions"
-        />
-      </Helmet>
+          content={ pressRelease.description }
+          />
+      </Head>
+      <HeaderSite />
       
-      {allreleases.filter(item => item.slug === router.query.slug).map((item, index) => (
-        <center key={`${item.id}${index}`}>
-          <p>{item.pdfPage}</p>
-          <div >
-            <PDFViewer pdf={item.pdfPage} />
-          </div>
-        </center>
-     ))}
+      <div className='w-full px-3 sm:px-12 py-6 mt-28'>
+        <div className='container mx-auto px-10 mb-8 relative'>
+            <div className='text-glimpse-blue absolute inset-y-1/3 transition duration-300 ease hover:-translate-y-0.5 hover:text-gray-600'>   
+                <i className="fas fa-arrow-left"></i>
+                <a href="/news/press-releases" className='ml-2 hover:text-gray-600'>All Press</a>
+            </div>
+            
+            <div className='m__bottom m__top flex justify-center'>
+                <h1 className="text-gray-500 font-light text-4xl my-3" style={{ fontFamily: 'Montserrat' }}>Press Release</h1>
+            </div>
+        </div>
+        <div>
+            <PostDetail post={pressRelease} />
+            <Author author={pressRelease.author} />
+        </div>
+      </div>
+      <FooterSite />
     </div>
   )
 }
 
 export default SingleRelease;
+
+// fetch data using getStaticProps using Next.js
+export async function getStaticProps({ params }){
+  //const posts = (await getPosts()) || [];
+  const data = await getPressReleaseDetails(params.slug);
+
+  return {
+    props: { pressRelease: data }
+  }
+}
+
+export async function getStaticPaths(){
+  const pressReleases = await getPressReleases()
+
+  return{
+      paths: pressReleases.map(( { node: { slug } }) => ({ params: { slug }} )),
+      fallback: true,
+  }
+}

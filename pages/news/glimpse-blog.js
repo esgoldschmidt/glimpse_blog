@@ -1,7 +1,8 @@
 import { PostCard, Categories, PostWidget, FeaturedPosts, FeaturedPostsCard } from "../../components";
-import { getPosts } from '../../services';
+import { getPosts } from '../../services'; 
 import HeaderSite from '../../components/HeaderSite.jsx'
 import Header from '../../components/Header.jsx'
+import FooterSite from '../../components/FooterSite.jsx'
 import Head from 'next/head';
 
 
@@ -24,6 +25,7 @@ export default function Blog({ posts }) {
           <FeaturedPostsCard key={index} post={post.node} />
         ))}
       </div>
+      <FooterSite />
     </div>
   );
 }

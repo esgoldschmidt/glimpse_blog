@@ -46,6 +46,18 @@ const PostDetail = ( {post} ) => {
                   src={obj.src}
                 />
               );
+            case 'iframe':
+                return(
+                    <div className='flex justify-center sm:mb-4'>
+                        <iframe id='video' 
+                            height={obj.height}
+                            width={obj.width} 
+                            src={obj.url}
+                        >
+                        </iframe> 
+                    </div>
+                     
+                )
             default:
               return modifiedText;
           }

@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react'
 import HeaderSite from '../components/HeaderSite';
+import HeaderSiteNew from '../components/HeaderSiteNew';
 import FooterSite from '../components/FooterSite';
 import ContactForm from '../components/ContactForm'
 import { Helmet } from "react-helmet";
@@ -24,14 +25,16 @@ export default function Home({ posts }) {
                 />
             </Helmet>
             <HeaderSite />
-            <div className='home-content mt-24'>
+        
+            <div className='home-content '>
             <Box
                 display="flex"
                 flexDirection="column"
                 justifyContent="center"
                 alignItems="center"
                 position="absolute"
-                zIndex={99}
+                top='110px'
+                zIndex={40}
                 height="91.45vh"
                 minHeight='600px'
                 width="100%"

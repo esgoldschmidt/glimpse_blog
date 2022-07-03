@@ -11,7 +11,7 @@ const PostWidget = ( {categories, slug} ) => {
  
 
     useEffect(() => {
-        getRecentPosts()
+        getRecentPosts(slug)
             .then((result) => setRelatedPosts(result))
     }, [])
 

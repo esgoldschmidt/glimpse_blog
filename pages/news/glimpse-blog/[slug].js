@@ -1,10 +1,11 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import Header from '../../../components/Header.jsx'
-import HeaderSite from '../../../components/HeaderSite.jsx'
 import Head from 'next/head';
+import HeaderSite from '../../../components/HeaderSite';
+import Header from '../../../components/Header';
+import FooterSite from '../../../components/FooterSite';
 
-import { getPosts, getPostDetails } from '../../../services';
+import { getPosts, getPostDetails } from '../../../services'; 
 
 import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader  } from '../../../components';
 
@@ -16,19 +17,19 @@ const PostDetails = ({ post }) => {
     }
     return (
         
-        <div className='mx-4 mb-8'>
+        <div>
             <Head>
                 <title>{post.title}</title>
                 <meta
                 name="description"
-                content="Insightful and thought-provoking articles on the world of VR, AR, and the metaverse, according to industry experts."
+                content={ post.description }
                 />
             </Head>
             <HeaderSite />
             <div className='mt-32'>
                 <Header />
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-12 gap-8'>
+            <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 mx-4 mb-8'>
                 <div className='col-span-1 lg:col-span-9'>
                     <PostDetail post={post} />
                     <Author author={post.author} />
@@ -41,6 +42,7 @@ const PostDetails = ({ post }) => {
                     </div>
                 </div>
             </div>
+            <FooterSite />
         </div>
     )
 }
