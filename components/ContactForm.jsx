@@ -50,7 +50,7 @@ function ContactForm() {
                 console.log(result.text);
                 // gaEventTracker('contact_form_submitted')
             }, (error) => {
-                console.log(error.text);
+                console.log(error.text); 
             });
             setSubmitted(true)
             setEmail('')
