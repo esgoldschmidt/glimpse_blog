@@ -16,8 +16,6 @@ function SingleRelease ({ pressRelease }) {
     return <Loader />
   }
 
-  console.log( pressRelease )
-
   return (
     <div className="SingleRelease">
       <Head>
@@ -29,8 +27,8 @@ function SingleRelease ({ pressRelease }) {
       </Head>
       <HeaderSite />
       
-      <div className='w-full px-3 sm:px-12 py-6 mt-28'>
-        <div className='container mx-auto px-10 mb-8 relative'>
+      <div className='px-3 sm:px-12 sm:mx-20 py-6 mt-28'>
+        <div className='container mx-auto md:px-10 mb-8 relative'>
             <div className='text-glimpse-blue absolute inset-y-1/3 transition duration-300 ease hover:-translate-y-0.5 hover:text-gray-600'>   
                 <i className="fas fa-arrow-left"></i>
                 <a href="/news/press-releases" className='ml-2 hover:text-gray-600'>All Press</a>
