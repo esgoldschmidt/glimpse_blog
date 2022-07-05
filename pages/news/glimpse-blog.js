@@ -17,7 +17,7 @@ export default function Blog({ posts }) {
         />
       </Head>
       <HeaderSite />
-      <div className="container mx-auto px-10 mb-8">
+      <div className="container mx-auto lg:px-10 mb-8">
         <div className='mt-32'>
           <Header />
         </div>
