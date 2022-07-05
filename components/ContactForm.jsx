@@ -3,7 +3,6 @@ import useAnalyticsEventTracker from './useAnalyticsEventTracker';
 import emailjs from 'emailjs-com';
 import { Grid, Paper, useMediaQuery, Button } from "@mui/material";
 import ReCAPTCHA from "react-google-recaptcha";
-import useAnalyticsEventTracker from './useAnalyticsEventTracker';
 
 function ContactForm() {
     const [email, setEmail] = useState();
