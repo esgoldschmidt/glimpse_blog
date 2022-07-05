@@ -12,6 +12,7 @@ import logo from "../assets/images/glimpseblue.svg";
 import { useRouter } from 'next/router'
 import externalLinkIcon from '../assets/images/External_link_font_awesome.svg.png';
 import { CSSTransition } from 'react-transition-group';
+import useAnalyticsEventTracker from './useAnalyticsEventTracker';
 
 
 function HeaderSite() {
@@ -31,7 +32,7 @@ function HeaderSite() {
     const [logoHeight, setLogoHeight] = useState("7rem");
     const [logoWidth, setLogoWidth] = useState("11.66rem");
     const [animateHeader, setAnimateHeader] = useState(false);
-    // const gaEventTracker = useAnalyticsEventTracker('Header');
+    const gaEventTracker = useAnalyticsEventTracker('Header');
     const [inProp, setInProp] = useState(false);
 
     useEffect(() => {
@@ -570,7 +571,7 @@ function HeaderSite() {
                   //className={classes.mContact}
                   //component={SmoothLink}
                   href="#contact"
-                  // onClick={()=>gaEventTracker('contact_drawer')}
+                  onClick={()=>gaEventTracker('contact_drawer')}
                   disableTypography
                 >
                   Contact Us
@@ -709,7 +710,7 @@ function HeaderSite() {
                                   margin: '0 1.5em 0 0' 
                                   }}
                         href="#contact"
-                        // onClick={()=>gaEventTracker('contact_head')}
+                        onClick={()=>gaEventTracker('contact_head')}
                         >
                         Contact Us
                         </div>

@@ -3,6 +3,7 @@ import useAnalyticsEventTracker from './useAnalyticsEventTracker';
 import emailjs from 'emailjs-com';
 import { Grid, Paper, useMediaQuery, Button } from "@mui/material";
 import ReCAPTCHA from "react-google-recaptcha";
+import useAnalyticsEventTracker from './useAnalyticsEventTracker';
 
 function ContactForm() {
     const [email, setEmail] = useState();
@@ -48,7 +49,7 @@ function ContactForm() {
             emailjs.sendForm('service_d1x8ss7', 'template_mcf8zsn', event.target, 'ZTQJioF16AnG3aZEk')
             .then((result) => {
                 console.log(result.text);
-                // gaEventTracker('contact_form_submitted')
+                gaEventTracker('contact_form_submitted')
             }, (error) => {
                 console.log(error.text); 
             });

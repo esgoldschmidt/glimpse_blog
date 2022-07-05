@@ -38,13 +38,16 @@ const PostDetail = ( {post} ) => {
               return <h4 key={index} className="text-md font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
             case 'image':
               return (
-                <img
-                  key={index}
-                  alt={obj.title}
-                  height={obj.height}
-                  width={obj.width}
-                  src={obj.src}
-                />
+                <div className='flex justify-center'>
+                    <img
+                        key={index}
+                        alt={obj.title}
+                        height={obj.height}
+                        width={obj.width}
+                        src={obj.src}
+                        />
+                </div>
+                
               );
             case 'iframe':
                 return(
@@ -65,11 +68,11 @@ const PostDetail = ( {post} ) => {
 
     return (
         <div className='bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8'>
-            <div className='relative overflow-hidden shadow-md mb-6'>
+            <div className='relative overflow-hidden flex justify-center mb-6'>
                 <img
                     src={post.featuredImage.url}
                     alt={post.title}
-                    className='object-top h-full w-full rounded-t-lg'
+                    className='object-top h-96 w-auto rounded-lg'
                 />
             </div>
             <div className='px-4 lg:px=0'>
