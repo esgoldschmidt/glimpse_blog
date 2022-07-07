@@ -701,7 +701,7 @@ function HeaderSite() {
                     {matches ? drawer : topBar }
                     
                     {!matches && 
-                        <div
+                        <a
                         variant="contained"
                         className={`btn whitespace-nowrap bg-glimpse-blue hover:bg-sky-600 pt-2 pb-2 pl-3 pr-3 text-white transition duration-700 transform hover:-translate-y-1 mr-4`}
                         style={{ fontFamily: 'Montserrat', 
@@ -712,7 +712,7 @@ function HeaderSite() {
                         onClick={()=>gaEventTracker('contact_head')}
                         >
                         Contact Us
-                        </div>
+                        </a>
                     }
 
                     <Popper
