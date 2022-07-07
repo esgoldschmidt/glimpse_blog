@@ -1,11 +1,12 @@
 import { request, gql } from 'graphql-request'
+import axios from 'axios';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
 export const getPosts = async () => {
     const query = gql`
         query MyQuery {
-            postsConnection {
+            postsConnection(orderBy: releaseDate_DESC) {
                 edges {
                     node {
                         author {
@@ -17,6 +18,7 @@ export const getPosts = async () => {
                             }
                         }
                         createdAt
+                        releaseDate
                         slug
                         title
                         description
@@ -35,13 +37,13 @@ export const getPosts = async () => {
 
     const result = await request(graphqlAPI, query);
 
-    return result.postsConnection.edges.reverse();
+    return result.postsConnection.edges;
 }
 
 export const getPressReleases = async () => {
     const query = gql`
         query MyQuery {
-            pressReleasesConnection {
+            pressReleasesConnection(orderBy: releaseDate_DESC) {
                 edges {
                     node {
                         releaseDate
@@ -59,7 +61,7 @@ export const getPressReleases = async () => {
 
     const result = await request(graphqlAPI, query);
 
-    return result.pressReleasesConnection.edges.reverse();
+    return result.pressReleasesConnection.edges;
 }
 
 export const getPressCoverage = async () => {
@@ -305,4 +307,63 @@ export const getCategoryPost = async (slug) => {
   
     return result.postsConnection.edges.reverse();
   };
+
+{/*
+export const getInsightlyUser = async (obj) => {
+    const result = await fetch(`/api/insightlyNewsletter`, {
+        method: 'GET',
+
+        headers: {
+            'Content-Type': 'application/json',
+            "Authorization" : "Basic NjZmNzkxZWQtZjVkYS00YzE5LTgxODctNzExNTAzYTdjNjFkOg=="
+        },
+        body: JSON.stringify(obj)
+    })
+
+    axios({
+        method: "GET",
+        url:"https://api.na1.insightly.com/v3.1/Contacts/Search?EMAIL_ADDRESS=jeff.meisner@sector5digital.com",
+        //withCredentials: true,
+        headers: {
+            "Content-Type": "multipart/form-data",
+            "Access-Control-Allow-Origin": "*",
+            'Access-Control-Allow-Credentials': true,
+            'Authorization': "Basic NjZmNzkxZWQtZjVkYS00YzE5LTgxODctNzExNTAzYTdjNjFkOg==",
+          },
+        })
+        .then((response) => {
+            console.log('working', response)
+        }).catch((error) => {
+            if (error.response) {
+                console.log('error', error.response)
+            }
+        })
+
+    return result.json();
+}
+
+export const updateInsightlyUser = async (obj) => {
+    const result = await fetch('https://api.na1.insightly.com/v3.1/Contacts', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            "Authorization" : "Basic NjZmNzkxZWQtZjVkYS00YzE5LTgxODctNzExNTAzYTdjNjFkOg=="
+        },
+        body: JSON.stringify(obj)
+    })
+    return result.json();
+}
+
+export const addInsightlyUser = async (obj) => {
+    const result = await fetch('https://api.na1.insightly.com/v3.1/Contacts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            "Authorization" : "Basic NjZmNzkxZWQtZjVkYS00YzE5LTgxODctNzExNTAzYTdjNjFkOg=="
+        },
+        body: JSON.stringify(obj)
+    })
+    return result.json();
+}
+*/}
 

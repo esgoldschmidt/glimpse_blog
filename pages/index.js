@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react'
 import HeaderSite from '../components/HeaderSite';
-import HeaderSiteNew from '../components/HeaderSiteNew';
 import FooterSite from '../components/FooterSite';
 import ContactForm from '../components/ContactForm'
 import { Helmet } from "react-helmet";
@@ -9,6 +8,7 @@ import { useMediaQuery, Box } from "@mui/material";
 import glimpseCompanies from "../components/data/allcompanies";
 import VideoJS from "../components/VideoJS";
 import Clients from "../components/Clients";
+import ClientHome from "../components/ClientHome";
 import Solutions from "../components/Solutions";
 import Companies from "../components/Companies";
 
@@ -61,7 +61,7 @@ export default function Home({ posts }) {
                 </Box>
                 <VideoJS />
             </div>
-            <Clients />
+            <ClientHome />
 
             <section className="p__y">
                 <div className="max__width m__y">

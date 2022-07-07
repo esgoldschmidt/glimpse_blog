@@ -35,27 +35,26 @@ function HeaderSite() {
     const gaEventTracker = useAnalyticsEventTracker('Header');
     const [inProp, setInProp] = useState(false);
 
+    let logo_testing;
     useEffect(() => {
-      const listener = () => {
-        if (window.scrollY > 50) {
-          <CSSTransition
-            // in={showMessage}
-            timeout={300}
-            //classNames="alert"
-            unmountOnExit
-            // onEnter={() => setShowButton(false)}
-            //onExited={() => setShowButton(true)}
-          >
-
-          </CSSTransition>
-          setAnimateHeader(true);
-        } else setAnimateHeader(false);
-      };
-      window.addEventListener("scroll", listener);
-      return () => {
-        window.removeEventListener("scroll", listener);
-      };
-    }, []);
+        logo_testing = document.getElementById("logo_test_1")
+        logo_testing.classList.add("logo_test")
+        const listener = () => {
+          if (window.scrollY > 50) {
+            logo_testing.classList.add("logo_test_tiny")
+            logo_testing.classList.remove("logo_test")
+            
+          } else {
+            logo_testing.classList.add("logo_test")
+            logo_testing.classList.remove("logo_test_tiny")
+            
+          }
+        };
+        window.addEventListener("scroll", listener);
+        return () => {
+          window.removeEventListener("scroll", listener);
+        };
+    });
 
     const handleClick = (e, index) => {
       setAnchorEl(e.currentTarget);
@@ -691,13 +690,13 @@ function HeaderSite() {
                   >
                     <div className='w-52'>
                       <a href="/">
-                        <div className={`transition transform duration-1000 ease-in-out ${animateHeader ? "h-16" : "h-28"}`}>
-                          <img alt="company logo" id='logo' className={`h-full`} src={logo.src} />
+                        <div id='logo_test_1'>
+              
                         </div>
                       </a>
                     </div>
                     
-                    
+                
                     
                     {matches ? drawer : topBar }
                     
@@ -773,6 +772,7 @@ function HeaderSite() {
                 </div>
                 </AppBar>
             </ElevationScroll>
+            
       
             <div 
                 //className={classes.toolbarMargin}

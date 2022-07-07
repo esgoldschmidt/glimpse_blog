@@ -22,7 +22,7 @@ const FeaturedPostsCard = ({post}) => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                     <div className='flex text-gray-500'>
-                        {moment(post.createdAt).format('MMM DD, YYYY')}
+                        {moment(post.releaseDate).format('MMM DD, YYYY')}
                     </div>
                 </div>
                 <Link href={'/news/glimpse-blog/' + post.slug} key={post.title} className='justify-items-center text-center h-full w-350px'>

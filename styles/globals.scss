@@ -396,6 +396,76 @@ a {
   }
 }
 
+.modal-header .btn-close {
+  content: "x";
+  background-color: #bababa;
+  color: white;
+  padding: 0.5rem 0.5rem;
+  margin: -0.5rem -0.5rem -0.5rem auto;
+}
+
+.react-multiple-carousel__arrow--left::before {
+  content: "\e824";
+  color: #476ebc;
+  z-index: 45;
+}
+
+.react-multiple-carousel__arrow--left {
+  left: -15px;
+  z-index: 45;
+}
+
+.react-multiple-carousel__arrow--right::before {
+  content: "\e825";
+  color: #476ebc;
+  z-index: 45;
+}
+
+.react-multiple-carousel__arrow--right {
+  right: -15px;
+  z-index: 45;
+}
+
+.react-multiple-carousel__arrow--right:hover {
+  background-color: #d7d7d700;
+}
+
+.react-multiple-carousel__arrow--left:hover {
+  background-color: #d7d7d700;
+}
+
+.header_test {
+  width:100%;
+  height:100px;
+  background: rgba(34, 103, 187, 0);
+  color: #000;
+  position:fixed;
+  top:0;
+  left:0;
+  transition: height 500ms, background 500ms;
+}
+.logo_test {
+  background: url("../assets/images/glimpseblue.svg") no-repeat;
+  width: 180px;
+  height: 112px;
+  display: block;
+  background-size: contain;
+  transition: all 0.7s ease-in-out 0s;
+}
+.header_test.tiny {
+  height:40px;
+  background: #aaa;
+  color: #fff;
+}
+.logo_test_tiny{
+  background: url("../assets/images/glimpseblue.svg") no-repeat;
+  width: 100px;
+  height: 50px;
+  display: block;
+  background-size: contain;
+  transition: all 0.7s ease-in-out 0s;
+}
+
 
 @media screen and (max-width: 1060px) {
   

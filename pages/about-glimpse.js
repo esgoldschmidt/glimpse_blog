@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 import ContactForm from "../components/ContactForm";
 import FooterSite from "../components/FooterSite";
 import HeaderSite from '../components/HeaderSite';
-
 import GlimpsePyramid from "../assets/images/about/GlimpsePyramidLandscape.png";
 import Time from "../assets/images/about/time.png";
 import Customers from "../assets/images/about/customers.png";
@@ -130,293 +129,297 @@ function aboutGlimpse() {
                     
                 </div>
                 <h3 className="leader-title text-gray-600 font-light text-center text-3xl m-3" style={{ fontFamily: 'Montserrat' }}>Executives</h3>
-                <div className="card-grid-responsive text-center gap-4 flex flex-wrap justify-center">
-                    <div className="flip-card">
-                        <div className="card__content">
-                            <div
-                            className="card__front"
-                            style={{
-                                backgroundImage: "url(" + Bentovim.src + ")",
-                                backgroundColor: "rgba(0, 0, 0, 0)",
-                                filter: "grayscale(100%)",
-                            }}
-                            ></div>
-                            <div className="card__back">
-                            <p className="card__body">
-                                25 years of executive leadership experience
-                                <br />
-                                Led numerous tech start-ups and public companies Yale, MBA
-                            </p>
-                            <div className="leader-social">
-                                <a href="https://www.linkedin.com/in/lyronbentovim" target="_blank">
-                                    <i className="fa fa-linkedin-square"></i>
-                                </a>
-                                {/* <a href="mailto:maydan@theglimpsegroup.com">
-                                <i className="far fa-envelope"></i>
-                                </a> */}
-                            </div>
-                            </div>
-                        </div>
-                        <h3 className="pb-clr">Lyron Bentovim</h3>
-                        <h4>PRESIDENT & CEO</h4>
-                    </div>
-                    <div className="flip-card">
-                        <div className="card__content">
-                            <div
-                            className="card__front"
-                            style={{
-                                backgroundImage: "url(" + Rothblum.src + ")",
-                                backgroundColor: "rgba(0, 0, 0, 0)",
-                            }}
-                            ></div>
-                            <div className="card__back">
-                            <p className="card__body">
-                                20 years of finance and operations experience
-                                <br />
-                                Managing Director and COO of a tech focused private equity fund
-                                <br />
-                                Columbia, MBA
-                            </p>
-                            <div className="leader-social">
-                                <a href="https://www.linkedin.com/in/maydan-rothblum-9954a/" target="_blank" className='mr-3'>
-                                    <i className="fa fa-linkedin-square"></i>
-                                </a>
-                                <a className="email" href="mailto:maydan@theglimpsegroup.com">
+                <div className='flex justify-center'>
+                    <div className="card-grid-responsive text-center gap-4 flex flex-wrap justify-center w-11/12 lg:w-3/4">
+                        <div className="flip-card">
+                            <div className="card__content">
+                                <div
+                                className="card__front"
+                                style={{
+                                    backgroundImage: "url(" + Bentovim.src + ")",
+                                    backgroundColor: "rgba(0, 0, 0, 0)",
+                                    filter: "grayscale(100%)",
+                                }}
+                                ></div>
+                                <div className="card__back">
+                                <p className="card__body">
+                                    25 years of executive leadership experience
+                                    <br />
+                                    Led numerous tech start-ups and public companies Yale, MBA
+                                </p>
+                                <div className="leader-social">
+                                    <a href="https://www.linkedin.com/in/lyronbentovim" target="_blank">
+                                        <i className="fa fa-linkedin-square"></i>
+                                    </a>
+                                    {/* <a href="mailto:maydan@theglimpsegroup.com">
                                     <i className="far fa-envelope"></i>
-                                </a>
+                                    </a> */}
+                                </div>
+                                </div>
                             </div>
-                            </div>
+                            <h3 className="pb-clr">Lyron Bentovim</h3>
+                            <h4>PRESIDENT & CEO</h4>
                         </div>
-                        <h3 className="pb-clr">Maydan Rothblum</h3>
-                        <h4>CFO & COO</h4>
-                    </div>
-                    <div className="flip-card">
-                        <div className="card__content">
-                            <div
-                            className="card__front"
-                            style={{
-                                backgroundImage: "url(" + Smith.src + ")",
-                                backgroundColor: "rgba(0, 0, 0, 0.13)",
-                                filter: "grayscale(100%)",
-                            }}
-                            ></div>
-                            <div className="card__back">
-                            <p className="card__body">
-                                VR/AR Expert
-                                <br />
-                                Founder and Organizer of NYVR Meetup
-                                <br />
-                                Penn State, BS Civil Eng.
-                            </p>
-                            <div className="leader-social">
-                                <a href="https://www.linkedin.com/in/dj-smith-034b0ba/" target="_blank">
+                        <div className="flip-card">
+                            <div className="card__content">
+                                <div
+                                className="card__front"
+                                style={{
+                                    backgroundImage: "url(" + Rothblum.src + ")",
+                                    backgroundColor: "rgba(0, 0, 0, 0)",
+                                }}
+                                ></div>
+                                <div className="card__back">
+                                <p className="card__body">
+                                    20 years of finance and operations experience
+                                    <br />
+                                    Managing Director and COO of a tech focused private equity fund
+                                    <br />
+                                    Columbia, MBA
+                                </p>
+                                <div className="leader-social">
+                                    <a href="https://www.linkedin.com/in/maydan-rothblum-9954a/" target="_blank" className='mr-3'>
+                                        <i className="fa fa-linkedin-square"></i>
+                                    </a>
+                                    <a className="email" href="mailto:maydan@theglimpsegroup.com">
+                                        <i className="far fa-envelope"></i>
+                                    </a>
+                                </div>
+                                </div>
+                            </div>
+                            <h3 className="pb-clr">Maydan Rothblum</h3>
+                            <h4>CFO & COO</h4>
+                        </div>
+                        <div className="flip-card">
+                            <div className="card__content">
+                                <div
+                                className="card__front"
+                                style={{
+                                    backgroundImage: "url(" + Smith.src + ")",
+                                    backgroundColor: "rgba(0, 0, 0, 0.13)",
+                                    filter: "grayscale(100%)",
+                                }}
+                                ></div>
+                                <div className="card__back">
+                                <p className="card__body">
+                                    VR/AR Expert
+                                    <br />
+                                    Founder and Organizer of NYVR Meetup
+                                    <br />
+                                    Penn State, BS Civil Eng.
+                                </p>
+                                <div className="leader-social">
+                                    <a href="https://www.linkedin.com/in/dj-smith-034b0ba/" target="_blank">
+                                        <i className="fa fa-linkedin-square"></i>
+                                    </a>
+                                </div>
+                                </div>
+                            </div>
+                            <h3 className="pb-clr">DJ Smith</h3>
+                            <h4>CCO</h4>
+                        </div>
+                        <div className="flip-card">
+                            <div className="card__content">
+                                <div
+                                className="card__front"
+                                style={{
+                                    backgroundImage: "url(" + Meisner.src + ")",
+                                    backgroundColor: "rgba(0, 0, 0, 0.13)",
+                                    filter: "grayscale(100%)",
+                                }}
+                                ></div>
+                                <div className="card__back">
+                                <p className="card__body">
+                                    20+ years of executive leadership experience in the tech
+                                    industry
+                                    <br />
+                                    Founder and General Manager of Sector 5 Digital
+                                </p>
+                                <div className="leader-social">
+                                    <a href="https://www.linkedin.com/in/jeffmeisner/" target="_blank">
+                                        <i className="fa fa-linkedin-square"></i>
+                                    </a>
+                                </div>
+                                </div>
+                            </div>
+                            <h3 className="pb-clr">Jeff Meisner</h3>
+                            <h4>CRO</h4>
+                        </div>
+                        <div className="flip-card">
+                            <div className="card__content">
+                                <div
+                                className="card__front"
+                                style={{
+                                    backgroundImage: "url(" + James.src + ")",
+                                    backgroundColor: "rgba(0, 0, 0, 0)",
+                                }}
+                                ></div>
+                                <div className="card__back">
+                                <p className="card__body">
+                                    20+ years of marketing leadership experience with over a decade
+                                    focusing on immersive technology <br /> Founder of XRTech
+                                    Marketing <br /> Co-chair of VR AR Association{" "}
+                                </p>
+                                <div className="leader-social">
+                                    <a href="https://www.linkedin.com/in/jamescwatson/?originalSubdomain=uk" target="_blank">
                                     <i className="fa fa-linkedin-square"></i>
-                                </a>
+                                    </a>
+                                </div>
+                                </div>
                             </div>
-                            </div>
+                            <h3 className="pb-clr">James Watson</h3>
+                            <h4>CMO</h4>
                         </div>
-                        <h3 className="pb-clr">DJ Smith</h3>
-                        <h4>CCO</h4>
-                    </div>
-                    <div className="flip-card">
-                        <div className="card__content">
-                            <div
-                            className="card__front"
-                            style={{
-                                backgroundImage: "url(" + Meisner.src + ")",
-                                backgroundColor: "rgba(0, 0, 0, 0.13)",
-                                filter: "grayscale(100%)",
-                            }}
-                            ></div>
-                            <div className="card__back">
-                            <p className="card__body">
-                                20+ years of executive leadership experience in the tech
-                                industry
-                                <br />
-                                Founder and General Manager of Sector 5 Digital
-                            </p>
-                            <div className="leader-social">
-                                <a href="https://www.linkedin.com/in/jeffmeisner/" target="_blank">
-                                    <i className="fa fa-linkedin-square"></i>
-                                </a>
-                            </div>
-                            </div>
-                        </div>
-                        <h3 className="pb-clr">Jeff Meisner</h3>
-                        <h4>CRO</h4>
-                    </div>
-                    <div className="flip-card">
-                        <div className="card__content">
-                            <div
-                            className="card__front"
-                            style={{
-                                backgroundImage: "url(" + James.src + ")",
-                                backgroundColor: "rgba(0, 0, 0, 0)",
-                            }}
-                            ></div>
-                            <div className="card__back">
-                            <p className="card__body">
-                                20+ years of marketing leadership experience with over a decade
-                                focusing on immersive technology <br /> Founder of XRTech
-                                Marketing <br /> Co-chair of VR AR Association{" "}
-                            </p>
-                            <div className="leader-social">
-                                <a href="https://www.linkedin.com/in/jamescwatson/?originalSubdomain=uk" target="_blank">
-                                <i className="fa fa-linkedin-square"></i>
-                                </a>
-                            </div>
-                            </div>
-                        </div>
-                        <h3 className="pb-clr">James Watson</h3>
-                        <h4>CMO</h4>
                     </div>
                 </div>
                 <br />
                 <h3 className="leader-title text-gray-600 font-light text-center text-3xl m-3" style={{ fontFamily: 'Montserrat' }}>Board Members</h3>
-                <div className="card-grid-responsive text-center gap-4 flex flex-wrap justify-center">
-                    <div className="flip-card">
-                        <div className="card__content">
-                            <div
-                            className="card__front"
-                            style={{
-                                backgroundImage: "url(" + Rowlands.src + ")",
-                                backgroundColor: "rgba(0, 0, 0, 0.13)",
-                                filter: "grayscale(100%)",
-                            }}
-                            ></div>
-                            <div className="card__back">
-                            <p className="card__body">
-                                20+ years of experience leading multi-billion-dollar private &
-                                public companies
-                                <br />
-                                CEO of Web.com
-                                <br />
-                                Director exp: Constant Contact, PegaSystems, & Automatic Data
-                                Processing
-                            </p>
-                            <div className="leader-social">
-                                <a href="https://www.linkedin.com/in/sharon-rowlands-29985692/" target="_blank">
+                <div className='flex justify-center'>
+                    <div className="card-grid-responsive text-center gap-4 flex flex-wrap justify-center w-11/12 lg:w-3/4">
+                        <div className="flip-card">
+                            <div className="card__content">
+                                <div
+                                className="card__front"
+                                style={{
+                                    backgroundImage: "url(" + Rowlands.src + ")",
+                                    backgroundColor: "rgba(0, 0, 0, 0.13)",
+                                    filter: "grayscale(100%)",
+                                }}
+                                ></div>
+                                <div className="card__back">
+                                <p className="card__body">
+                                    20+ years of experience leading multi-billion-dollar private &
+                                    public companies
+                                    <br />
+                                    CEO of Web.com
+                                    <br />
+                                    Director exp: Constant Contact, PegaSystems, & Automatic Data
+                                    Processing
+                                </p>
+                                <div className="leader-social">
+                                    <a href="https://www.linkedin.com/in/sharon-rowlands-29985692/" target="_blank">
+                                        <i className="fa fa-linkedin-square"></i>
+                                    </a>
+                                </div>
+                                </div>
+                            </div>
+                            <h3 className="pb-clr">Sharon Rowlands</h3>
+                            <h4>BOARD MEMBER</h4>
+                        </div>
+                        <div className="flip-card">
+                            <div className="card__content">
+                                <div
+                                className="card__front"
+                                style={{
+                                    backgroundImage: "url(" + Enslin.src + ")",
+                                    backgroundColor: "rgba(0, 0, 0, 0.13)",
+                                    filter: "grayscale(100%)",
+                                }}
+                                ></div>
+                                <div className="card__back">
+                                <p className="card__body">
+                                    20+ years of experience as Partner, Senior Executive, and
+                                    Portfolio Manager at global investment fund
+                                    <br />
+                                    Director of several early stage technology companies
+                                    <br />
+                                    NYU, MBA
+                                </p>
+                                <div className="leader-social">
+                                    <a href="https://www.linkedin.com/in/jeff-enslin-735b9481/" target="_blank">
                                     <i className="fa fa-linkedin-square"></i>
-                                </a>
+                                    </a>
+                                </div>
+                                </div>
                             </div>
-                            </div>
+                            <h3 className="pb-clr">Jeff Enslin</h3>
+                            <h4>BOARD MEMBER</h4>
                         </div>
-                        <h3 className="pb-clr">Sharon Rowlands</h3>
-                        <h4>BOARD MEMBER</h4>
-                    </div>
-                    <div className="flip-card">
-                        <div className="card__content">
-                            <div
-                            className="card__front"
-                            style={{
-                                backgroundImage: "url(" + Enslin.src + ")",
-                                backgroundColor: "rgba(0, 0, 0, 0.13)",
-                                filter: "grayscale(100%)",
-                            }}
-                            ></div>
-                            <div className="card__back">
-                            <p className="card__body">
-                                20+ years of experience as Partner, Senior Executive, and
-                                Portfolio Manager at global investment fund
-                                <br />
-                                Director of several early stage technology companies
-                                <br />
-                                NYU, MBA
-                            </p>
-                            <div className="leader-social">
-                                <a href="https://www.linkedin.com/in/jeff-enslin-735b9481/" target="_blank">
-                                <i className="fa fa-linkedin-square"></i>
-                                </a>
+                        <div className="flip-card">
+                            <div className="card__content">
+                                <div
+                                className="card__front"
+                                style={{
+                                    backgroundImage: "url(" + Amen.src + ")",
+                                    backgroundColor: "rgba(0, 0, 0, 0.15)",
+                                    filter: "grayscale(100%)",
+                                }}
+                                ></div>
+                                <div className="card__back">
+                                <p className="card__body">
+                                    25+ years as senior operating & investment executive
+                                    <br />
+                                    Led global business units at multinational companies, Director
+                                    of several companies
+                                    <br />
+                                    Northwestern University, MS Engineering
+                                </p>
+                                <div className="leader-social">
+                                    <a href="https://www.linkedin.com/in/lemamen/" target='_blank'>
+                                        <i className="fa fa-linkedin-square"></i>
+                                    </a>
+                                </div>
+                                </div>
                             </div>
-                            </div>
+                            <h3 className="pb-clr">Lemuel Amen</h3>
+                            <h4>BOARD MEMBER</h4>
                         </div>
-                        <h3 className="pb-clr">Jeff Enslin</h3>
-                        <h4>BOARD MEMBER</h4>
-                    </div>
-                    <div className="flip-card">
-                        <div className="card__content">
-                            <div
-                            className="card__front"
-                            style={{
-                                backgroundImage: "url(" + Amen.src + ")",
-                                backgroundColor: "rgba(0, 0, 0, 0.15)",
-                                filter: "grayscale(100%)",
-                            }}
-                            ></div>
-                            <div className="card__back">
-                            <p className="card__body">
-                                25+ years as senior operating & investment executive
-                                <br />
-                                Led global business units at multinational companies, Director
-                                of several companies
-                                <br />
-                                Northwestern University, MS Engineering
-                            </p>
-                            <div className="leader-social">
-                                <a href="https://www.linkedin.com/in/lemamen/" target='_blank'>
+                        <div className="flip-card">
+                            <div className="card__content">
+                                <div
+                                className="card__front"
+                                style={{
+                                    backgroundImage: "url(" + Ruckdaeschel.src + ")",
+                                    backgroundColor: "rgba(0, 0, 0, 0.13)",
+                                    filter: "grayscale(100%)",
+                                }}
+                                ></div>
+                                <div className="card__back">
+                                <p className="card__body">
+                                    20+ years of international experience in the financial,
+                                    investment and technology industries as a co-founder, partner
+                                    and senior executive
+                                    <br />
+                                    Formerly a long-term Director at Vuzix (Nadaq: VUZI)
+                                    <br />
+                                    Significant experience in technology company operations
+                                </p>
+                                <div className="leader-social">
+                                    <a href="https://www.linkedin.com/in/alexander-ruckdaeschel-21a8151a7/" target='_blank'>
                                     <i className="fa fa-linkedin-square"></i>
-                                </a>
+                                    </a>
+                                </div>
+                                </div>
                             </div>
-                            </div>
+                            <h3 className="pb-clr">Alexander Ruckdaeschel</h3>
+                            <h4>BOARD MEMBER</h4>
                         </div>
-                        <h3 className="pb-clr">Lemuel Amen</h3>
-                        <h4>BOARD MEMBER</h4>
-                    </div>
-                    <div className="flip-card">
-                        <div className="card__content">
-                            <div
-                            className="card__front"
-                            style={{
-                                backgroundImage: "url(" + Ruckdaeschel.src + ")",
-                                backgroundColor: "rgba(0, 0, 0, 0.13)",
-                                filter: "grayscale(100%)",
-                            }}
-                            ></div>
-                            <div className="card__back">
-                            <p className="card__body">
-                                20+ years of international experience in the financial,
-                                investment and technology industries as a co-founder, partner
-                                and senior executive
-                                <br />
-                                Formerly a long-term Director at Vuzix (Nadaq: VUZI)
-                                <br />
-                                Significant experience in technology company operations
-                            </p>
-                            <div className="leader-social">
-                                <a href="https://www.linkedin.com/in/alexander-ruckdaeschel-21a8151a7/" target='_blank'>
-                                <i className="fa fa-linkedin-square"></i>
-                                </a>
+                        <div className="flip-card">
+                            <div className="card__content">
+                                <div
+                                className="card__front"
+                                style={{
+                                    backgroundImage: "url(" + Charles.src + ")",
+                                    backgroundColor: "rgba(0, 0, 0, 0.13)",
+                                    filter: "grayscale(100%)",
+                                }}
+                                ></div>
+                                <div className="card__back">
+                                <p className="card__body">
+                                    25+ years executive leadership in tech, operations, finance, and
+                                    acquisitions; CFO of numerous SaaS, tech finance, and digital
+                                    media companies
+                                </p>
+                                <div className="leader-social">
+                                    <a href="https://www.linkedin.com/in/ian-charles-0271489/" target="_blank">
+                                        <i className="fa fa-linkedin-square"></i>
+                                    </a>
+                                </div>
+                                </div>
                             </div>
-                            </div>
+                            <h3 className="pb-clr">Ian Charles</h3>
+                            <h4>BOARD MEMBER</h4>
                         </div>
-                        <h3 className="pb-clr">Alexander Ruckdaeschel</h3>
-                        <h4>BOARD MEMBER</h4>
-                    </div>
-                    <div className="flip-card">
-                        <div className="card__content">
-                            <div
-                            className="card__front"
-                            style={{
-                                backgroundImage: "url(" + Charles.src + ")",
-                                backgroundColor: "rgba(0, 0, 0, 0.13)",
-                                filter: "grayscale(100%)",
-                            }}
-                            ></div>
-                            <div className="card__back">
-                            <p className="card__body">
-                                25+ years executive leadership in tech, operations, finance, and
-                                acquisitions; CFO of numerous SaaS, tech finance, and digital
-                                media companies
-                            </p>
-                            <div className="leader-social">
-                                <a href="https://www.linkedin.com/in/ian-charles-0271489/" target="_blank">
-                                    <i className="fa fa-linkedin-square"></i>
-                                </a>
-                            </div>
-                            </div>
-                        </div>
-                        <h3 className="pb-clr">Ian Charles</h3>
-                        <h4>BOARD MEMBER</h4>
                     </div>
                 </div>
             </div>
