@@ -439,7 +439,7 @@ function HeaderSite() {
                   <a className="nav-link pl-2.5 py-2.5 transition duration-500 ease transform hover:-translate-y-1 font-light text-gray-500 hover:text-sky-600" style={{ fontFamily: 'Montserrat' }} href="https://ir.theglimpsegroup.com/" target='_blank'>
                   <div className='flex justify-center items-center'>
                     Investor Relations
-                    <img src={externalLinkIcon.src} className='ml-2 h-4 w-4'/>
+                    <i className="ml-2 fa-solid fa-arrow-up-right-from-square"></i>
                   </div>
                   </a>
                 </li>
