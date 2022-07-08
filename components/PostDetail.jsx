@@ -72,10 +72,10 @@ const PostDetail = ( {post} ) => {
                 <img
                     src={post.featuredImage.url}
                     alt={post.title}
-                    className='object-top h-96 w-auto rounded-lg'
+                    className='object-top lg:h-96 w-auto rounded-lg'
                 />
             </div>
-            <div className='px-4 lg:px=0'>
+            <div className='px-2 md:px-4'>
                 <div className='flex items-center mb-8 w-full'>
                     <div className='flex items-center lg:mb-0 w-full lg:w-auto mr-8'>
                         <img
@@ -85,7 +85,7 @@ const PostDetail = ( {post} ) => {
                             className='align-middle rounded-full'
                             src={post.author.photo.url}
                         />
-                        <p className='inline align-middle text-gray-700 ml-2 text-lg'>{post.author.name}</p>
+                        <p className='inline align-middle text-gray-700 ml-2 text-lg whitespace-nowrap'>{post.author.name}</p>
                     </div>
                     <div className='font-medium text-gray-700 whitespace-nowrap'>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline mr-2 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -32,15 +32,15 @@ const Header = () => {
     */}
 
     return (
-        <div className='container mx-auto px-10 mb-8 relative'>
+        <div className='container mx-auto md:px-10 mb-8 relative'>
             {path !== "/news/glimpse-blog" && 
-                <div className='text-glimpse-blue absolute inset-y-1/3 transition duration-300 ease hover:-translate-y-0.5 hover:text-gray-600'>   
+                <div className='text-glimpse-blue absolute md:inset-y-1/3 transition duration-300 ease hover:-translate-y-0.5 hover:text-gray-600'>   
                     <i className="fas fa-arrow-left"></i>
                     <a href="/news/glimpse-blog" className='ml-2 hover:text-gray-600'>Blog Home</a>
                 </div>
             }
             <div className='m__bottom m__top flex justify-center'>
-                <h1 className="text-gray-500 font-light text-4xl my-3" style={{ fontFamily: 'Montserrat' }}>Glimpse Blog</h1>
+                <h1 className="text-gray-500 font-light text-4xl mb-3 mt-4" style={{ fontFamily: 'Montserrat' }}>Glimpse Blog</h1>
             </div>
         </div>
     )

@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import HeaderSite from '../../components/HeaderSite';
+import FooterSite from '../../components/FooterSite'
+import ContactForm from '../../components/ContactForm'
 import { useState } from 'react'
 import { Helmet } from "react-helmet";
 import pressc from '../../components/data/allpress'
@@ -56,7 +58,7 @@ function pressCoverage( {pressCoverageItems} ) {
             <HeaderSite />
             <div className='pt-8 px-3 mt-24 flex flex-col items-center'>
                 <span className="text-gray-600 font-light" style={{ fontFamily: 'Montserrat' }}>
-                <h4>YOUR TRUSTED SOURCE FOR VR AND AR INFORMATION</h4>
+                <h4 className='text-center'>YOUR TRUSTED SOURCE FOR VR AND AR INFORMATION</h4>
                 </span>
                 <h1 className="text-gray-600 font-light text-4xl mt-3" style={{ fontFamily: 'Montserrat' }}>Press Coverage</h1>
                 {/* <p>Glimpse is your source for information regrading the enterprise <br/> development of VR and AR software services.</p> */}
@@ -66,6 +68,8 @@ function pressCoverage( {pressCoverageItems} ) {
             <div className="press-content text-center gap-4 flex flex-wrap justify-center pb-4 w-full">
                 <PressCoverageItems pressItem={pressItems}/>
             </div>
+            <ContactForm />
+            <FooterSite />
         </div>
     )
 }

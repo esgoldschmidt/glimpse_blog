@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import Head from 'next/head';
 import HeaderSite from '../../../components/HeaderSite';
 import Header from '../../../components/Header';
+import ContactForm from '../../../components/ContactForm'
 import FooterSite from '../../../components/FooterSite';
 
 import { getPosts, getPostDetails } from '../../../services'; 
@@ -29,7 +30,7 @@ const PostDetails = ({ post }) => {
             <div className='mt-32'>
                 <Header />
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 mx-4 mb-8'>
+            <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 md:mx-4 mb-8'>
                 <div className='col-span-1 lg:col-span-9'>
                     <PostDetail post={post} />
                     <Author author={post.author} />
@@ -42,6 +43,7 @@ const PostDetails = ({ post }) => {
                     </div>
                 </div>
             </div>
+            <ContactForm />
             <FooterSite />
         </div>
     )

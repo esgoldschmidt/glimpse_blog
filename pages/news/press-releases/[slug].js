@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import allreleases from '../../../components/data/Releases/allreleases'
 import { Loader, PostDetail, Author } from '../../../components'
 import HeaderSite from '../../../components/HeaderSite';
+import ContactForm from '../../../components/ContactForm'
 import FooterSite from '../../../components/FooterSite';
 import { useRouter } from 'next/router'
 import Head from 'next/head';
@@ -27,15 +28,15 @@ function SingleRelease ({ pressRelease }) {
       </Head>
       <HeaderSite />
       
-      <div className='px-3 sm:px-12 sm:mx-20 py-6 mt-28'>
+      <div className=' sm:px-12 sm:mx-20 py-6 mt-28'>
         <div className='container mx-auto md:px-10 mb-8 relative'>
-            <div className='text-glimpse-blue absolute inset-y-1/3 transition duration-300 ease hover:-translate-y-0.5 hover:text-gray-600'>   
+            <div className='text-glimpse-blue absolute md:inset-y-1/3 transition duration-300 ease hover:-translate-y-0.5 hover:text-gray-600'>   
                 <i className="fas fa-arrow-left"></i>
                 <a href="/news/press-releases" className='ml-2 hover:text-gray-600'>All Press</a>
             </div>
             
             <div className='m__bottom m__top flex justify-center'>
-                <h1 className="text-gray-500 font-light text-4xl my-3" style={{ fontFamily: 'Montserrat' }}>Press Release</h1>
+                <h1 className="text-gray-500 font-light text-4xl mb-3 mt-4" style={{ fontFamily: 'Montserrat' }}>Press Release</h1>
             </div>
         </div>
         <div>
@@ -43,6 +44,7 @@ function SingleRelease ({ pressRelease }) {
             <Author author={pressRelease.author} />
         </div>
       </div>
+      <ContactForm />
       <FooterSite />
     </div>
   )

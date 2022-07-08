@@ -5,6 +5,7 @@ import Dates from '../../components/Dates'
 import { Helmet } from "react-helmet";
 import { useState } from 'react';
 import HeaderSite from '../../components/HeaderSite';
+import ContactForm from '../../components/ContactForm'
 import FooterSite from '../../components/FooterSite';
 
 
@@ -67,6 +68,7 @@ function pressReleases({ pressReleases }) {
                     <ReleaseItems releaseItem={releaseItems} />
                 </div>
             </div>
+            <ContactForm />
             <FooterSite />
         </div>
     )

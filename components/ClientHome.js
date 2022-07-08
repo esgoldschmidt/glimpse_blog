@@ -28,7 +28,7 @@ export default function Clients() {
     <React.Fragment>
       <div className='bg-white p-4 mb-8'>
         <div className="flex w-full justify-center mt-10 mb-6">
-            <h2 className="text-4xl text-gray-600 font-light" style={{ fontFamily: 'Montserrat' }}>Our Clients & Partners</h2>
+            <h2 className="text-4xl text-gray-600 font-light text-center" style={{ fontFamily: 'Montserrat' }}>Our Clients & Partners</h2>
         </div>
         <Carousel
           swipeable={true}

@@ -40,14 +40,14 @@ export default function Home({ posts }) {
                 width="100%"
                 color="white"
                 >
-                <div align="center" className='p-4 text-2xl md:text-4xl lg:text-5xl md:w-11/12 ' style={{ fontFamily: 'Montserrat'}}>
+                <div align="center" className='py-4 text-2xl md:text-4xl lg:text-5xl md:w-11/12 ' style={{ fontFamily: 'Montserrat'}}>
                     <h1 className='font-medium'>
                     Unlocking the Benefits of <br /> Virtual Reality & Augmented Reality
                     </h1>
                     
                 </div>      
                 <div align="center" className='w-full'>
-                    <h2 className='p-2 font-light text-xl lg:text-2xl w-10/12' style={{ fontFamily: 'Montserrat'}}>
+                    <h2 className='py-2 px-3 font-light text-xl lg:text-2xl w-full' style={{ fontFamily: 'Montserrat'}}>
                     The Glimpse Group <a href='https://ir.theglimpsegroup.com/' target='_blank' rel="noreferrer" className='transform duration-700 hover:ease hover:text-glimpse-blue'>
                     (Nasdaq: VRAR)</a> is an immersive technology 
                     { !b830 ? <br /> : " " }
@@ -66,7 +66,7 @@ export default function Home({ posts }) {
             <section className="p__y">
                 <div className="max__width m__y">
                 <div className="container-text__width flex text-4xl flex-col items-center">
-                    <h2 className='font-light text-gray-600 m-6' style={{ fontFamily: 'Montserrat' }}>Our Business Software & Solutions</h2>
+                    <h2 className='font-light text-gray-600 m-6 text-center' style={{ fontFamily: 'Montserrat' }}>Our Business Software & Solutions</h2>
                     <div className='flex justify-center'>
                     <p className="m__bottom text-lg w-10/12 md:w-1/2 font-light text-gray-600 text-center" style={{ fontFamily: 'Montserrat' }}>
                         Within The Glimpse Group, we have extensive experience across a
@@ -80,9 +80,9 @@ export default function Home({ posts }) {
             </section>
             <div className="max__width m__top m-4 flex flex-col items-center" id="companies">
                 <div className="container-text__width text__center flex flex-col items-center">
-                    <h2 className='pb-2 font-light text-gray-600 text-4xl' style={{ fontFamily: 'Montserrat' }}>Our Companies</h2>
+                    <h2 className='pb-2 font-light text-gray-600 text-4xl text-center' style={{ fontFamily: 'Montserrat' }}>Our Companies</h2>
                     <div className='flex justify-center'>
-                        <p className="m__bottom w-10/12 md:w-2/3 text-lg font-light text-gray-600 text-center mt-4 mb-6" style={{ fontFamily: 'Montserrat' }}>
+                        <p className="m__bottom w-full md:w-2/3 text-lg font-light text-gray-600 text-center mt-4 mb-6" style={{ fontFamily: 'Montserrat' }}>
                         As part of the Glimpse ecosystem, our companies focus on their
                         core competencies while benefiting from one another's industry
                         connections, IP, resources and expertise. Together, we develop
@@ -94,9 +94,8 @@ export default function Home({ posts }) {
                 </div>
                 <Companies companyItem={companyItems} />
             </div>
-            <div className='m-8'>
-                <ContactForm />
-            </div>
+            <ContactForm />
+    
             
             <FooterSite />
         </div>

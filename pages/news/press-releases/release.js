@@ -110,9 +110,8 @@ function home() {
                 </div>
                 <Companies companyItem={companyItems} />
             </div>
-            <div className='m-8'>
-                <ContactForm />
-            </div>
+            
+            <ContactForm />
             
             <FooterSite />
         </div>

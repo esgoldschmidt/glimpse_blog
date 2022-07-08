@@ -74,12 +74,12 @@ function ContactForm() {
       }
 
     return (
-        <div className="contact flex flex-col items-center my-4" id="contact">
+        <div className="contact flex flex-col items-center mx-3 my-4" id="contact">
             <div className="text__center mt-10 mb-3">
                 <h2 className='font-light text-gray-600 pb-clr m-2 mt-9 text-4xl' style={{ fontFamily: 'Montserrat' }}>Contact Us</h2>
             </div>
 
-        <Paper elevation={6} className="contact-box bg-gray-100 w-11/12 md:w-9/12 lg:w-1/2 rounded-lg" style={{ backgroundColor: '#f2f2f2' }}>
+        <Paper elevation={6} className="contact-box bg-gray-100 w-full md:w-9/12 lg:w-1/2 rounded-lg" style={{ backgroundColor: '#f2f2f2' }}>
             <div className="contact-form">
             <form
                 name="insightly_form"
@@ -194,19 +194,20 @@ function ContactForm() {
                 />
               
               <div className='flex-col content-center w-full'>
-                <div className='flex justify-center'>
+                <div className='flex justify-center gap-6'>
+                  <button
+                    className="btn m-2 bg-zinc-400 hover:bg-glimpse-blue text-white transform duration-500 hover:ease py-1 rounded-lg w-32"  
+                    onClick={resetForm}
+                  >
+                    Reset
+                  </button>
                   <button
                     className="btn m-2 bg-glimpse-blue hover:bg-sky-600 text-white transform duration-500 hover:ease px-2 py-1 rounded-lg w-32 "
                     type="submit"
                   >
                     Submit
                   </button>
-                  <button
-                    className="btn m-2 bg-glimpse-blue hover:bg-sky-600 text-white transform duration-500 hover:ease py-1 rounded-lg w-32"  
-                    onClick={resetForm}
-                  >
-                    Reset
-                  </button>
+                  
 
                 </div>
                 

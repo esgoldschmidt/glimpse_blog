@@ -1,6 +1,7 @@
 import { PostCard, Categories, PostWidget, FeaturedPosts, FeaturedPostsCard } from "../../components";
 import { getPosts } from '../../services'; 
 import HeaderSite from '../../components/HeaderSite.jsx'
+import ContactForm from '../../components/ContactForm'
 import Header from '../../components/Header.jsx'
 import FooterSite from '../../components/FooterSite.jsx'
 import Head from 'next/head';
@@ -27,7 +28,7 @@ export default function Blog({ posts }) {
           ))}
         </div>
       </div>
-      
+      <ContactForm />
       <FooterSite />
     </div>
   );

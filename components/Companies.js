@@ -13,7 +13,7 @@ function Companies({ companyItem }) {
                     { item.id === 15 ? 
                       <div className="hex__front__soon clip-path">
                         <img className="hex-img relative" src={item.image.src} alt={item.alt} />
-                        <p className='text-center absolute bottom-12 left-12 text-white'>coming soon</p>
+                        <p className='text-center absolute bottom-12 left-12 text-white whitespace-nowrap'>coming soon</p>
                       </div>
                     : 
                       <div className="hex__front clip-path">
@@ -45,7 +45,7 @@ function Companies({ companyItem }) {
                       { item.id === 15 ? 
                         <div className="hex__front__soon clip ">
                           <img className="hex-img relative" src={item.image.src} alt={item.alt} />
-                          <p className='text-center text-sm absolute bottom-6 left-4 smallMobile:bottom-7 smallMobile:left-6 md:left-3 md:bottom-6  text-white'>coming soon</p>
+                          <p className='text-center text-sm absolute bottom-5 left-1 smallMobile:bottom-7 smallMobile:left-6 md:left-3 md:bottom-6  text-white whitespace-nowrap'>coming soon</p>
                         </div>
                       : 
                         <div className="hex__front clip">
