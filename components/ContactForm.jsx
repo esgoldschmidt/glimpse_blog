@@ -214,7 +214,7 @@ function ContactForm() {
                 { !submitted ?
                   <p className='text-center mt-2 text-sm'>*required field</p>
                   :
-                  <p className='text-center text-green-700 mt-2 text-lg bg-green-200 rounded-lg p-1'>Thank you. Your message as been submitted. We will get back to you very soon.</p>
+                  <p className='text-center text-green-700 mt-2 text-lg bg-green-200 rounded-lg p-1'>Thank you. Your message has been submitted. We will get back to you very soon.</p>
                 }
                 
               </div>
