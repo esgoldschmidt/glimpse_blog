@@ -45,7 +45,7 @@ function ContactForm() {
         let gResponse = document.getElementById('g-recaptcha-response')
         console.log(gResponse.value)
         if (gResponse.value){
-            emailjs.sendForm('service_d1x8ss7', 'template_mcf8zsn', event.target, 'ZTQJioF16AnG3aZEk')
+            emailjs.sendForm('service_d1x8ss7', 'template_sls03f4', event.target, 'ZTQJioF16AnG3aZEk')
             .then((result) => {
                 console.log(result.text);
                 gaEventTracker('contact_form_submitted')
