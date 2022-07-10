@@ -130,11 +130,11 @@ function HeaderSite() {
         {
           name: "Industry Solutions",
           typeLink: Link,
-          link: "/industry-solutions/",
+          link: "/industry-solutions",
           activeIndex: 2,
           disable: true,
           // class: classes.tab,
-          selectedIndex: 0,
+          // selectedIndex: 0,
           ariaOwns: anchorEl ? "simple-menu-ind" : undefined,
           ariaPopup: anchorEl ? "true" : undefined,
           mouseOver: handleClick,
@@ -308,9 +308,6 @@ function HeaderSite() {
           name: (
             <div className='flex'>
               Investor Relations
-              <div class='whitespace-nowrap flex items-center'>
-                
-              </div>
             </div>
           ),
           target: "_blank",
@@ -523,28 +520,28 @@ function HeaderSite() {
                   </div>
                 ) : (
                   <div key={index}>
-                  <Divider />
-                  <ListItemButton
-                    //divider
-                    key={index}
-                    //button
-                    //component={route.typeLink}
-                    //to={route.link}
-                    href={route.link}
-                    target={route.target}
-                    selected={value === route.activeIndex}
-                    //classes={{ selected: classes.drawerItemSelected }}
-                    onClick={() => {
-                      setOpenDrawer(false);
-                      setSelectedIndex(route.selectedIndex);
-                    }}
-                  >
-                    <ListItemText 
-                        //className={classes.drawerItem} 
-                        disableTypography>
-                      {route.name}
-                    </ListItemText>
-                  </ListItemButton>
+                    <Divider />
+                    <ListItemButton
+                      //divider
+                      key={index}
+                      //button
+                      //component={route.typeLink}
+                      //to={route.link}
+                      href={route.link}
+                      target={route.target}
+                      selected={value === route.activeIndex}
+                      //classes={{ selected: classes.drawerItemSelected }}
+                      onClick={() => {
+                        setOpenDrawer(false);
+                        setSelectedIndex(route.selectedIndex);
+                      }}
+                    >
+                      <ListItemText 
+                          //className={classes.drawerItem} 
+                          disableTypography>
+                        {route.name}
+                      </ListItemText>
+                    </ListItemButton>
                   </div>
                 )
               )}

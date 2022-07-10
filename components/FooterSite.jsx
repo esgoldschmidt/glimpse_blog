@@ -21,7 +21,7 @@ function FooterSite () {
                     </div>
                     <div className="info__container flex items-center text-sm lg:text-base m-2">
                         <i className="fas fa-map-marked-alt"></i>
-                        <p className='m-2'>
+                        <p className='mx-2'>
                             15 West 38th Street, Floor 9<br />
                             New York, New York 10018
                         </p>
