@@ -41,9 +41,9 @@ function foodHospitality() {
                 />
             </Helmet>
             <HeaderSite />
-            <div className="pt-12 px-3 mt-16">
+            <div className="pt-12 sm:px-3 mt-16">
                 <h1 className='text-center text-4xl lg:text-5xl font-light m-3 text-gray-500'>Solutions by Sector</h1>
-                <section className="outer-container relative bg-sky-700 max-w-screen-2xl rounded-lg m-4 py-5 px-4">
+                <section className="outer-container relative bg-sky-700 max-w-screen-2xl rounded-lg mx-1 my-4 py-5 px-2 md:px-4">
                     <div className="inner__container text-gray-700 rounded-lg">
                         <div className="grid-container flex items-center lg:items-stretch lg:justify-between flex-col lg:flex-row w-full bg-cover bg-no-repeat bg-right lg:bg-center py-6 pb-24 rounded-t-lg" style={{ backgroundImage: `url(${background.src})` }}>
                             <div className="sm:h-72 lg:h-auto w-full lg:w-1/2 ml-4">

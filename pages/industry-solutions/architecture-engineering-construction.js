@@ -44,7 +44,7 @@ function architectureEngineeringConstruction() {
                 />
             </Helmet>
             <HeaderSite />
-            <div className="pt-12 px-3 mt-16">
+            <div className="pt-12 sm:px-3 mt-16">
                 <h1 className='text-center text-4xl lg:text-5xl font-light m-3 text-gray-500'>Solutions by Sector</h1>
                 <section className="outer-container relative bg-sky-700 max-w-screen-2xl rounded-lg mx-1 my-4 py-5 px-2 md:px-4">
                     <div className="inner__container text-gray-700 rounded-lg">

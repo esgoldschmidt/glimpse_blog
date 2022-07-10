@@ -15,7 +15,7 @@ function FooterSite () {
                 <div className="footer-grid grid sm:grid-cols-2 flex items-center h-full">
                     <div className="text-sm lg:text-base m-2">
                         <a href="mailto:info@glimpsegroup.io" className='flex items-center transform text-white duration-300 hover:ease hover:-translate-y-1'>
-                            <i className="far fa-envelope"></i> 
+                            <i className="far fa-envelope mr-2"></i> 
                             <p>info@glimpsegroup.io</p>
                         </a>
                     </div>

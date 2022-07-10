@@ -74,7 +74,7 @@ function ContactForm() {
       }
 
     return (
-        <div className="contact flex flex-col items-center mx-3 my-4" id="contact">
+        <div className="contact flex flex-col items-center my-4" id="contact">
             <div className="text__center mt-10 mb-3">
                 <h2 className='font-light text-gray-600 pb-clr m-2 mt-9 text-4xl' style={{ fontFamily: 'Montserrat' }}>Contact Us</h2>
             </div>
