@@ -3,6 +3,8 @@ import { useMediaQuery } from "@mui/material";
 import { useCookies } from "react-cookie"
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Toast from 'react-bootstrap/Toast';
+import ToastContainer from 'react-bootstrap/ToastContainer';
 import axios from 'axios';
 //import { getInsightlyUser } from '../services'
 
@@ -110,10 +112,11 @@ function NewsLetter() {
       
     return (
         <div>
-            <Modal show={show} onHide={handleClose} centered className='mt-14'>
+            
+            <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='bottom-5 left-5 flex flex-col container-end justify-end' style={{ width: '300px', position:'fixed', height:'100vh', overflow:'hidden' }}>
                 <Modal.Header>
-                    <Modal.Title className='text-center w-full text-lg md:text-xl'>Glimpse Insider Newsletter</Modal.Title>
-                    <button type="button" onClick={ handleClose } className=" text-zinc-500 px-3 py-1 rounded-lg absolute right-3" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <Modal.Title className='text-center w-full text-lg md:text-xl z-10'>Glimpse Insider Newsletter</Modal.Title>
+                    <button type="button" onClick={ handleClose } className=" text-zinc-500  py-1 rounded-lg absolute right-3" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </Modal.Header>
                 <Modal.Body className='p-0'>
                     <div className='flex justify-center'>
@@ -132,12 +135,12 @@ function NewsLetter() {
                         <div className={`flex justify-around w-full ${breakGrid ? 'flex-col' : ''}`}>
                             <div className={`mx-4`} id='userInfoBlock'>
                             <div className='my-3 flex flex justify-end items-center'>
-                                <label htmlFor="EMAIL_ADDRESS" className='mb-0 mr-2'>Email*</label>
                                 <input
                                 id="insightly_EMAIL_ADDRESS"
                                 name="email"
                                 type="text"
                                 value={ email } 
+                                placeholder='Email*'
                                 onChange={ handleEmailChange }
                                 className='p-2 rounded-lg w-64 bg-zinc-100'
                                 autoComplete="off"
@@ -146,13 +149,13 @@ function NewsLetter() {
                             </div>
 
                             <div className='my-3 flex justify-end items-center'>
-                                <label htmlFor="FIRST_NAME" className='mb-0 mr-2'>First Name*</label>
                                 <input
                                 id="insightly_FIRST_NAME"
                                 name="firstName"
                                 type="text"
                                 value={ firstName } 
                                 onChange={ handleFirstChange }
+                                placeholder='First Name*'
                                 className='p-2 rounded-lg w-64 bg-zinc-100' 
                                 autoComplete="off"
                                 //required
@@ -160,12 +163,12 @@ function NewsLetter() {
                             </div>
 
                             <div className='my-3 flex justify-end items-center'>
-                                <label htmlFor="LAST_NAME" className='mb-0 mr-2'>Last Name*</label>
                                 <input
                                 id="insightly_LAST_NAME"
                                 name="lastName"
                                 type="text"
                                 value={ lastName } 
+                                placeholder='Last Name*'
                                 onChange={ handleLastChange }
                                 autoComplete="off"
                                 className='p-2 rounded-lg w-64 bg-zinc-100'
@@ -174,12 +177,12 @@ function NewsLetter() {
                             </div>
 
                             <div className='my-2 flex justify-end items-center'>
-                                <label htmlFor="ORGANISATION_NAME" className='whitespace-nowrap mb-0 mr-2'>Organization*</label>
                                 <input
                                 id="insightly_ORGANISATION_NAME"
                                 name="org"
                                 type="text"
                                 value={ org } 
+                                placeholder='Organization*'
                                 onChange={ handleOrgChange }
                                 autoComplete="off"
                                 className='p-2 rounded-lg w-64 bg-zinc-100'
@@ -203,7 +206,7 @@ function NewsLetter() {
                     </form>
                 </div>
                 </Modal.Body>
-                <Modal.Footer className='flex justify-center gap-4'>
+                <Modal.Footer className='flex justify-center gap-1 md:gap-4'>
                 <button onClick={handleClose} className='btn bg-zinc-400 hover:bg-zinc-500 text-white w-28'>
                     Close
                 </button>

@@ -466,6 +466,20 @@ a {
   transition: all 0.7s ease-in-out 0s;
 }
 
+body.modal-open {
+  overflow: scroll !important
+  
+}
+
+.show{
+  display: flex !important
+}
+
+body.modal-content {
+  position: absolute !important;
+  bottom: '10px' !important;
+}
+
 
 @media screen and (max-width: 1060px) {
   
