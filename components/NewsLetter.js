@@ -39,6 +39,7 @@ function NewsLetter() {
         "EMAIL_ADDRESS" : "jeff.meisner@sector5digital.com"
     }
 
+    {/*
     useEffect(() => {
         getInsightlyUser(test)
             .then((result) => {
@@ -46,6 +47,7 @@ function NewsLetter() {
                 console.log('get test', result)
             })
     },[])
+    */}
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -108,13 +110,17 @@ function NewsLetter() {
       
     return (
         <div>
-            <Modal show={show} onHide={handleClose} centered>
+            <Modal show={show} onHide={handleClose} centered className='mt-14'>
                 <Modal.Header>
-                    <Modal.Title className='text-center w-full'>Keep Up With Glimpse News</Modal.Title>
-                    <button type="button" onClick={ handleClose } className="bg-zinc-100 hover:bg-zinc-200 text-zinc-500 px-3 py-1 rounded-lg absolute right-3" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <Modal.Title className='text-center w-full text-lg md:text-xl'>Glimpse Insider Newsletter</Modal.Title>
+                    <button type="button" onClick={ handleClose } className=" text-zinc-500 px-3 py-1 rounded-lg absolute right-3" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </Modal.Header>
                 <Modal.Body className='p-0'>
-                <div className="contact-form">
+                    <div className='flex justify-center'>
+                        <p className='mt-3 text-center'>Keep up with the Glimpse Group! <br /> Sign up to receive our newsletter.</p>
+                    </div>
+                    
+                <div className="contact-form ">
                     <form
                         name="insightly_form"
                         data-form-id="8602"
@@ -122,7 +128,7 @@ function NewsLetter() {
                         encType="text/plain"
                         onSubmit={ handleSubmit }
                     >
-                        <div className='flex flex-col items-center content-center my-4'>
+                        <div className='flex flex-col items-center content-center my-2'>
                         <div className={`flex justify-around w-full ${breakGrid ? 'flex-col' : ''}`}>
                             <div className={`mx-4`} id='userInfoBlock'>
                             <div className='my-3 flex flex justify-end items-center'>

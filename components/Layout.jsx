@@ -8,6 +8,7 @@ const Layout = ( { children } ) => {
     return (
         <div>
             { children }
+            <NewsLetter />
             <ConsentPopUp />
         </div>
     )
