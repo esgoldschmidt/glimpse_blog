@@ -480,6 +480,13 @@ body.modal-content {
   bottom: '10px' !important;
 }
 
+.modal{
+  bottom: initial!important;
+  position: fixed!important;
+  bottom: 0!important;
+  top: auto!important;
+ }
+
 
 @media screen and (max-width: 1060px) {
   

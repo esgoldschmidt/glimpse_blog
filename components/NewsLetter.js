@@ -113,7 +113,7 @@ function NewsLetter() {
     return (
         <div>
             
-            <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='bottom-5 left-5 flex flex-col container-end justify-end' style={{ width: '300px', position:'fixed', height:'100vh', overflow:'hidden' }}>
+            <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='bottom-5 left-5 flex flex-col container-end justify-end' style={{ width: '300px', height: '525px', position:'fixed' }}>
                 <Modal.Header>
                     <Modal.Title className='text-center w-full text-lg md:text-xl z-10'>Glimpse Insider Newsletter</Modal.Title>
                     <button type="button" onClick={ handleClose } className=" text-zinc-500  py-1 rounded-lg absolute right-3" data-bs-dismiss="modal" aria-label="Close">X</button>
