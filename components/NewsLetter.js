@@ -194,7 +194,7 @@ function NewsLetter() {
                             { !submitted ?
                             <p className='text-center mt-2 text-sm'>*required field</p>
                             :
-                            <p className='text-center text-green-700 mt-2 text-lg bg-green-200 rounded-lg p-1'>Thank you. You are now signed up to receive Glimpse News.</p>
+                            <p className='text-center text-green-700 mt-2 text-lg bg-green-200 p-2 font-light text-base'>Thank you. You are signed up to receive Glimpse News.</p>
                             }
                             
                         </div>
