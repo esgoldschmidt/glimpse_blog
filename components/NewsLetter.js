@@ -113,14 +113,14 @@ function NewsLetter() {
     return (
         <div>
             
-            <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='bottom-5 left-5 flex flex-col container-end justify-end' style={{ width: '300px', height: '525px', position:'fixed' }}>
+            <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='left-3 flex flex-col container-end justify-end' style={{ width: '300px', height: '465px', position:'fixed' }}>
                 <Modal.Header>
-                    <Modal.Title className='text-center w-full text-lg md:text-xl z-10'>Glimpse Insider Newsletter</Modal.Title>
-                    <button type="button" onClick={ handleClose } className=" text-zinc-500  py-1 rounded-lg absolute right-3" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <Modal.Title className='text-center w-full text-lg z-10'>Glimpse Insider Newsletter</Modal.Title>
+                    <button type="button" onClick={ handleClose } className=" text-zinc-500 hover:text-glimpse-blue hover:bg-zinc-200 px-2 transform duration-700 ease-in-out top-1 rounded-lg absolute right-1" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </Modal.Header>
                 <Modal.Body className='p-0'>
                     <div className='flex justify-center'>
-                        <p className='mt-3 text-center'>Keep up with the Glimpse Group! <br /> Sign up to receive our newsletter.</p>
+                        <p className='mt-1 text-center'>Keep up with the Glimpse Group! <br /> Sign up to receive our newsletter.</p>
                     </div>
                     
                 <div className="contact-form ">
@@ -131,10 +131,10 @@ function NewsLetter() {
                         encType="text/plain"
                         onSubmit={ handleSubmit }
                     >
-                        <div className='flex flex-col items-center content-center my-2'>
+                        <div className='flex flex-col items-center content-center my-1'>
                         <div className={`flex justify-around w-full ${breakGrid ? 'flex-col' : ''}`}>
                             <div className={`mx-4`} id='userInfoBlock'>
-                            <div className='my-3 flex flex justify-end items-center'>
+                            <div className='my-1 flex flex justify-end items-center'>
                                 <input
                                 id="insightly_EMAIL_ADDRESS"
                                 name="email"
@@ -142,13 +142,13 @@ function NewsLetter() {
                                 value={ email } 
                                 placeholder='Email*'
                                 onChange={ handleEmailChange }
-                                className='p-2 rounded-lg w-64 bg-zinc-100'
+                                className='p-1 rounded-lg w-64 bg-zinc-100'
                                 autoComplete="off"
                                 //required
                                 />
                             </div>
 
-                            <div className='my-3 flex justify-end items-center'>
+                            <div className='my-1 flex justify-end items-center'>
                                 <input
                                 id="insightly_FIRST_NAME"
                                 name="firstName"
@@ -156,13 +156,13 @@ function NewsLetter() {
                                 value={ firstName } 
                                 onChange={ handleFirstChange }
                                 placeholder='First Name*'
-                                className='p-2 rounded-lg w-64 bg-zinc-100' 
+                                className='p-1 rounded-lg w-64 bg-zinc-100' 
                                 autoComplete="off"
                                 //required
                                 />
                             </div>
 
-                            <div className='my-3 flex justify-end items-center'>
+                            <div className='my-1 flex justify-end items-center'>
                                 <input
                                 id="insightly_LAST_NAME"
                                 name="lastName"
@@ -171,12 +171,12 @@ function NewsLetter() {
                                 placeholder='Last Name*'
                                 onChange={ handleLastChange }
                                 autoComplete="off"
-                                className='p-2 rounded-lg w-64 bg-zinc-100'
+                                className='p-1 rounded-lg w-64 bg-zinc-100'
                                 //required
                                 />
                             </div>
 
-                            <div className='my-2 flex justify-end items-center'>
+                            <div className='my-1 flex justify-end items-center'>
                                 <input
                                 id="insightly_ORGANISATION_NAME"
                                 name="org"
@@ -185,7 +185,7 @@ function NewsLetter() {
                                 placeholder='Organization*'
                                 onChange={ handleOrgChange }
                                 autoComplete="off"
-                                className='p-2 rounded-lg w-64 bg-zinc-100'
+                                className='p-1 rounded-lg w-64 bg-zinc-100'
                                 //required
                                 />
                             </div>
@@ -195,9 +195,9 @@ function NewsLetter() {
                         
                         <div className='flex-col content-center w-full'>
                             { !submitted ?
-                            <p className='text-center mt-2 text-sm'>*required field</p>
+                            <p className='text-center text-sm'>*required field</p>
                             :
-                            <p className='text-center text-green-700 mt-2 text-lg bg-green-200 p-2 font-light text-base'>Thank you. You are signed up to receive Glimpse News.</p>
+                            <p className='text-center text-green-700 text-lg bg-green-200 p-2 font-light text-base'>Thank you. You are signed up to receive Glimpse News.</p>
                             }
                             
                         </div>
@@ -206,12 +206,12 @@ function NewsLetter() {
                     </form>
                 </div>
                 </Modal.Body>
-                <Modal.Footer className='flex justify-center gap-1 md:gap-4'>
-                <button onClick={handleClose} className='btn bg-zinc-400 hover:bg-zinc-500 text-white w-28'>
+                <Modal.Footer className='flex justify-center gap-1'>
+                <button onClick={handleClose} className='rounded-md py-1 transition duration-700 ease-in-out bg-zinc-400 hover:bg-zinc-500 text-white w-28'>
                     Close
                 </button>
                 { !submitted &&
-                    <button type="submit" form='news-form' className="btn bg-glimpse-blue hover:bg-sky-600 w-28 text-white">Sign Up!</button>
+                    <button type="submit" form='news-form' className="rounded-md py-1 transition duration-700 ease-in-out bg-glimpse-blue hover:bg-sky-600 w-28 text-white">Sign Up!</button>
                 }
                 </Modal.Footer>
             </Modal>
