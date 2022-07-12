@@ -92,12 +92,12 @@ function ContactForm() {
               <div className={`flex justify-around w-full ${breakGrid ? 'flex-col' : ''}`}>
                 <div className={`mx-4 ${breakGrid ? '' : 'w-1/3'} `} id='userInfoBlock'>
                   <div className='my-3 flex flex-col'>
-                    <label htmlFor="EMAIL_ADDRESS" className='mb-0'>Email*</label>
                     <input
                       id="insightly_EMAIL_ADDRESS"
                       name="email"
                       type="text"
                       value={email} 
+                      placeholder='Email*'
                       onChange={handleEmailChange}
                       className='p-2 rounded-lg'
                       autoComplete="off"
@@ -106,12 +106,12 @@ function ContactForm() {
                   </div>
 
                   <div className='my-3 flex flex-col'>
-                    <label htmlFor="FIRST_NAME" className='mb-0'>First Name*</label>
                     <input
                       id="insightly_FIRST_NAME"
                       name="firstName"
                       type="text"
                       value={firstName} 
+                      placeholder='First Name*'
                       onChange={handleFirstChange}
                       className='p-2 rounded-lg'
                       autoComplete="off"
@@ -120,12 +120,12 @@ function ContactForm() {
                   </div>
 
                   <div className='my-3 flex flex-col'>
-                    <label htmlFor="LAST_NAME" className='mb-0'>Last Name*</label>
                     <input
                       id="insightly_LAST_NAME"
                       name="lastName"
                       type="text"
                       value={lastName} 
+                      placeholder='Last Name*'
                       onChange={handleLastChange}
                       autoComplete="off"
                       className='p-2 rounded-lg'
@@ -134,12 +134,12 @@ function ContactForm() {
                   </div>
 
                   <div className='my-2 flex flex-col'>
-                    <label htmlFor="ORGANISATION_NAME" className='whitespace-nowrap mb-0'>Organization Name*</label>
                     <input
                       id="insightly_ORGANISATION_NAME"
                       name="org"
                       type="text"
                       value={org} 
+                      placeholder='Organization*'
                       onChange={handleOrgChange}
                       autoComplete="off"
                       className='p-2 rounded-lg'
@@ -148,34 +148,18 @@ function ContactForm() {
                   </div>
                 </div>
                 <div className={`${breakGrid ? '' : 'w-7/12'}`}>
-                  <div className='my-2 mx-4 flex flex-col'>
-                    <label htmlFor="Message__c" className='mb-0'>Message*</label>
+                  <div className='my-3 mx-4 flex flex-col'>
                     <textarea
                       id="insightly_Message"
                       name="message"
                       type="text"
                       rows={8}
                       value={message} 
+                      placeholder='Message*'
                       onChange={handleMessageChange}
                       className='p-2 rounded-lg'
                       autoComplete="off"
                       required
-                    />
-                  </div>
-                  {/* Does this reference somewhere?  */}
-                  <div
-                    style={{
-                      position: "absolute",
-                      left: "-9999px",
-                      top: "-9999px",
-                    }}
-                  >
-                    <label htmlFor="insightly_additional_field">Comments</label>
-                    <input
-                      type="text"
-                      id="insightly_additional_field"
-                      name="insightly_additional_field"
-                      autoComplete="off"
                     />
                   </div>
                 </div>
@@ -196,7 +180,7 @@ function ContactForm() {
               <div className='flex-col content-center w-full'>
                 <div className='flex justify-center gap-6'>
                   <button
-                    className="btn m-2 bg-zinc-400 hover:bg-glimpse-blue text-white transform duration-500 hover:ease py-1 rounded-lg w-32"  
+                    className="btn m-2 bg-zinc-400 hover:bg-zinc-500 text-white transform duration-500 hover:ease py-1 rounded-lg w-32"  
                     onClick={resetForm}
                   >
                     Reset

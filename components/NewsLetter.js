@@ -113,14 +113,14 @@ function NewsLetter() {
     return (
         <div>
             
-            <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='left-3 flex flex-col container-end justify-end' style={{ width: '300px', height: '465px', position:'fixed' }}>
+            <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='left-2 flex flex-col container-end justify-end' style={{ width: '300px', height: '350px', position:'fixed' }}>
                 <Modal.Header>
-                    <Modal.Title className='text-center w-full text-lg z-10'>Glimpse Insider Newsletter</Modal.Title>
-                    <button type="button" onClick={ handleClose } className=" text-zinc-500 hover:text-glimpse-blue hover:bg-zinc-200 px-2 transform duration-700 ease-in-out top-1 rounded-lg absolute right-1" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <Modal.Title className='text-center w-full text-lg z-10 text-gray-600'>Glimpse Insider Newsletter</Modal.Title>
+                    <button type="button" onClick={ handleClose } className=" text-red-300 hover:text-gray-400 hover:bg-red-100 px-1.5 transform duration-700 ease-in-out top-0 rounded-md absolute right-0" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </Modal.Header>
                 <Modal.Body className='p-0'>
                     <div className='flex justify-center'>
-                        <p className='mt-1 text-center'>Keep up with the Glimpse Group! <br /> Sign up to receive our newsletter.</p>
+                        <p className='mt-1 text-center text-gray-600'>Keep up with the Glimpse Group! <br /> Sign up to receive our newsletter.</p>
                     </div>
                     
                 <div className="contact-form ">
@@ -195,7 +195,7 @@ function NewsLetter() {
                         
                         <div className='flex-col content-center w-full'>
                             { !submitted ?
-                            <p className='text-center text-sm'>*required field</p>
+                            <p className='text-center text-xs text-gray-500'>*required field</p>
                             :
                             <p className='text-center text-green-700 text-lg bg-green-200 p-2 font-light text-base'>Thank you. You are signed up to receive Glimpse News.</p>
                             }
