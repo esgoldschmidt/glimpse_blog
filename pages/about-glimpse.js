@@ -147,7 +147,9 @@ function aboutGlimpse() {
                                         <p className="card__body_flip">
                                             25 years of executive leadership experience
                                             <br />
-                                            Led numerous tech start-ups and public companies Yale, MBA
+                                            Led numerous tech start-ups and public companies 
+                                            <br />
+                                            Yale, MBA
                                         </p>
                                         <div className="leader-social">
                                             <a href="https://www.linkedin.com/in/lyronbentovim" target="_blank">
