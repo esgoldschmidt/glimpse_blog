@@ -29,19 +29,18 @@ class MyDocument extends Document {
             </Script>
 
             {/* <!-- Global site tag (gtag.js) - Google Univeral Analytics (legacy) --> */}
+           
             <Script 
               src="https://www.googletagmanager.com/gtag/js?id=UA-99077717-1"
               strategy="afterInteractive"
             />
             <Script id="google-analytics" strategy="afterInteractive">
-              dangerouslySetInnerHTML={{
-                __html: `
+              {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'UA-99077717-1', { page_path: window.location.pathname });
-              `,
-              }}
+              gtag('config', 'UA-99077717-1');
+              `}
             </Script>
 
             {/* <!-- Global site tag (gtag.js) - Google Univeral Analytics (legacy, other) --> */}
