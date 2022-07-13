@@ -21,7 +21,7 @@ function singleVideo() {
             <HeaderSite />
             {ourwork.filter(item => item.title === slug).map((item, index) => (
                 <React.Fragment key={index} >
-                    <div className='w-full flex justify-center m-4 text-gray-600 font-light text-4xl sm:text-5xl my-5' style={{ fontFamily: 'Montserrat' }}>
+                    <div className='w-full flex justify-center mt-32 text-gray-600 font-light text-4xl sm:text-5xl' style={{ fontFamily: 'Montserrat' }}>
                         <h2 className='text-center'>{item.title}</h2>
                     </div>
                     <div className='iframe-container mx-3' style={{ height: '65vh', width: '94vw'}}>

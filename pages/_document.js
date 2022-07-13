@@ -13,6 +13,7 @@ class MyDocument extends Document {
         <Head>
             <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500&display=swap" rel="stylesheet" />
             <script src="https://kit.fontawesome.com/55ad46d4ac.js" crossOrigin="anonymous"></script>
+            
             {/* <!-- Global site tag (gtag.js) - Google v4 Analytics --> */}
             <Script 
               src="https://www.googletagmanager.com/gtag/js?id=G-CJPTDJCELL"

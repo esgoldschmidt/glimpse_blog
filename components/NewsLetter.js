@@ -7,8 +7,34 @@ import Toast from 'react-bootstrap/Toast';
 import ToastContainer from 'react-bootstrap/ToastContainer';
 import axios from 'axios';
 //import { getInsightlyUser } from '../services'
+import useSWR from 'swr'
 
-function NewsLetter() {
+const defaultEndpoint = `https://api.na1.insightly.com/v3.1/Contacts`
+
+export async function getServerSideProps(){
+    console.log('initial call')
+    const res = await fetch(defaultEndpoint) || []
+    console.log('fetched')
+    const data = await res.json();
+    console.log('test', data)
+    return {
+        props: {
+            data
+        }
+    }
+}
+
+// Fetch data at build time
+//export async function getStaticProps() {
+ //   const posts = (await fetch(defaultEndpoint)) || [];
+
+//    return {
+//      props: { posts },
+//    }
+//  }
+
+function NewsLetter( {data} ) {
+
     const [email, setEmail] = useState();
     const [firstName, setFirstName] = useState();
     const [lastName, setLastName] = useState();
@@ -17,6 +43,20 @@ function NewsLetter() {
     const breakGrid = useMediaQuery('(max-width:600px)')
     const [show, setShow] = useState(false);
     const [cookie, setCookie] = useCookies()
+    const [error, setError] = useState()
+    //const [getData, setGetData] = useState([])
+
+    {/*
+    const fetcher = async (url) => {
+        const res = await fetch(url)
+        const data = await res.json()
+      
+        if (res.status !== 200) {
+          setError(data.message)
+        }
+        return data
+    }
+    */}
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -37,10 +77,6 @@ function NewsLetter() {
         setOrg(event.target.value)
     }
 
-    const test = {
-        "EMAIL_ADDRESS" : "jeff.meisner@sector5digital.com"
-    }
-
     {/*
     useEffect(() => {
         getInsightlyUser(test)
@@ -51,8 +87,12 @@ function NewsLetter() {
     },[])
     */}
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
+        let response = await fetch(`/api/userEmail/${email}`,{ method: "GET"})
+        //let data = await response.json()
+        //setGetData(data)
+        //alert('test', data)
         //console.log('test', event.target);
         //axios.get('https://api.na1.insightly.com/v3.1/Contacts/Search?EMAIL_ADDRESS="jeff.meisner@sector5digital.com"', {
         //    headers: {
@@ -109,102 +149,104 @@ function NewsLetter() {
             }, 3000)
         }
     }, [])
-      
+
+    //if (error) return <div>Failed to load</div>
+    //if (!data) return <div>Loading...</div>
+    console.log('data', data)
     return (
         <div>
             
-            <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='left-2 flex flex-col container-end justify-end' style={{ width: '300px', height: '350px', position:'fixed' }}>
+            <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='left-2 flex flex-col container-end justify-end' style={{ width: '300px', height: '343px', position:'fixed' }}>
                 <Modal.Header>
-                    <Modal.Title className='text-center w-full text-lg z-10 text-gray-600'>Glimpse Insider Newsletter</Modal.Title>
+                    <Modal.Title className='text-center w-full text-lg z-10 text-glimpse-blue'>Glimpse Insider Newsletter</Modal.Title>
                     <button type="button" onClick={ handleClose } className=" text-red-300 hover:text-gray-400 hover:bg-red-100 px-1.5 transform duration-700 ease-in-out top-0 rounded-md absolute right-0" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </Modal.Header>
                 <Modal.Body className='p-0'>
                     <div className='flex justify-center'>
-                        <p className='mt-1 text-center text-gray-600'>Keep up with the Glimpse Group! <br /> Sign up to receive our newsletter.</p>
+                        <p className='mt-1 text-center text-gray-600 text-sm'>Keep up with the Glimpse Group! <br /> Sign up to receive our newsletter.</p>
                     </div>
-                    
-                <div className="contact-form ">
-                    <form
-                        name="insightly_form"
-                        data-form-id="8602"
-                        id="news-form"
-                        encType="text/plain"
-                        onSubmit={ handleSubmit }
-                    >
-                        <div className='flex flex-col items-center content-center my-1'>
-                        <div className={`flex justify-around w-full ${breakGrid ? 'flex-col' : ''}`}>
-                            <div className={`mx-4`} id='userInfoBlock'>
-                            <div className='my-1 flex flex justify-end items-center'>
-                                <input
-                                id="insightly_EMAIL_ADDRESS"
-                                name="email"
-                                type="text"
-                                value={ email } 
-                                placeholder='Email*'
-                                onChange={ handleEmailChange }
-                                className='p-1 rounded-lg w-64 bg-zinc-100'
-                                autoComplete="off"
-                                //required
-                                />
-                            </div>
+                    <div className="contact-form ">
+                        <form
+                            name="insightly_form"
+                            data-form-id="8602"
+                            id="news-form"
+                            encType="text/plain"
+                            onSubmit={ handleSubmit }
+                        >
+                            <div className='flex flex-col items-center content-center my-1'>
+                            <div className={`flex justify-around w-full ${breakGrid ? 'flex-col' : ''}`}>
+                                <div className={`mx-4`} id='userInfoBlock'>
+                                <div className='my-1 flex flex justify-end items-center'>
+                                    <input
+                                    id="insightly_EMAIL_ADDRESS"
+                                    name="email"
+                                    type="text"
+                                    value={ email } 
+                                    placeholder='Email*'
+                                    onChange={ handleEmailChange }
+                                    className='p-1 rounded-lg w-64 bg-zinc-100'
+                                    autoComplete="off"
+                                    //required
+                                    />
+                                </div>
 
-                            <div className='my-1 flex justify-end items-center'>
-                                <input
-                                id="insightly_FIRST_NAME"
-                                name="firstName"
-                                type="text"
-                                value={ firstName } 
-                                onChange={ handleFirstChange }
-                                placeholder='First Name*'
-                                className='p-1 rounded-lg w-64 bg-zinc-100' 
-                                autoComplete="off"
-                                //required
-                                />
-                            </div>
+                                <div className='my-1 flex justify-end items-center'>
+                                    <input
+                                    id="insightly_FIRST_NAME"
+                                    name="firstName"
+                                    type="text"
+                                    value={ firstName } 
+                                    onChange={ handleFirstChange }
+                                    placeholder='First Name*'
+                                    className='p-1 rounded-lg w-64 bg-zinc-100' 
+                                    autoComplete="off"
+                                    //required
+                                    />
+                                </div>
 
-                            <div className='my-1 flex justify-end items-center'>
-                                <input
-                                id="insightly_LAST_NAME"
-                                name="lastName"
-                                type="text"
-                                value={ lastName } 
-                                placeholder='Last Name*'
-                                onChange={ handleLastChange }
-                                autoComplete="off"
-                                className='p-1 rounded-lg w-64 bg-zinc-100'
-                                //required
-                                />
-                            </div>
+                                <div className='my-1 flex justify-end items-center'>
+                                    <input
+                                    id="insightly_LAST_NAME"
+                                    name="lastName"
+                                    type="text"
+                                    value={ lastName } 
+                                    placeholder='Last Name*'
+                                    onChange={ handleLastChange }
+                                    autoComplete="off"
+                                    className='p-1 rounded-lg w-64 bg-zinc-100'
+                                    //required
+                                    />
+                                </div>
 
-                            <div className='my-1 flex justify-end items-center'>
-                                <input
-                                id="insightly_ORGANISATION_NAME"
-                                name="org"
-                                type="text"
-                                value={ org } 
-                                placeholder='Organization*'
-                                onChange={ handleOrgChange }
-                                autoComplete="off"
-                                className='p-1 rounded-lg w-64 bg-zinc-100'
-                                //required
-                                />
-                            </div>
+                                <div className='my-1 flex justify-end items-center'>
+                                    <input
+                                    id="insightly_ORGANISATION_NAME"
+                                    name="org"
+                                    type="text"
+                                    value={ org } 
+                                    placeholder='Organization*'
+                                    onChange={ handleOrgChange }
+                                    autoComplete="off"
+                                    className='p-1 rounded-lg w-64 bg-zinc-100'
+                                    //required
+                                    />
+                                </div>
+                                </div>
+                                
                             </div>
                             
-                        </div>
-                        
-                        <div className='flex-col content-center w-full'>
-                            { !submitted ?
-                            <p className='text-center text-xs text-gray-500'>*required field</p>
-                            :
-                            <p className='text-center text-green-700 text-lg bg-green-200 p-2 font-light text-base'>Thank you. You are signed up to receive Glimpse News.</p>
-                            }
+                            <div className='flex-col content-center w-full'>
+                                { !submitted ?
+                                <p className='text-center text-xs text-gray-500'>*required field</p>
+                                :
+                                <p className='text-center text-green-700 text-lg bg-green-200 p-2 font-light text-base'>Thank you. You are signed up to receive Glimpse News.</p>
+                                }
+                                
+                            </div>
                             
-                        </div>
-                        
-                        </div>
-                    </form>
-                </div>
+                            </div>
+                        </form>
+                    </div>
                 </Modal.Body>
                 <Modal.Footer className='flex justify-center gap-1'>
                 <button onClick={handleClose} className='rounded-md py-1 transition duration-700 ease-in-out bg-zinc-400 hover:bg-zinc-500 text-white w-28'>
