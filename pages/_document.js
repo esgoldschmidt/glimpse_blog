@@ -34,12 +34,14 @@ class MyDocument extends Document {
               strategy="afterInteractive"
             />
             <Script id="google-analytics" strategy="afterInteractive">
-              {`
+              dangerouslySetInnerHTML={{
+                __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'UA-99077717-1');
-              `}
+              gtag('config', 'UA-99077717-1', { page_path: window.location.pathname });
+              `,
+              }}
             </Script>
 
             {/* <!-- Global site tag (gtag.js) - Google Univeral Analytics (legacy, other) --> */}
