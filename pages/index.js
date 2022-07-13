@@ -11,10 +11,46 @@ import Clients from "../components/Clients";
 import ClientHome from "../components/ClientHome";
 import Solutions from "../components/Solutions";
 import Companies from "../components/Companies";
+import { loadUsers } from '../lib/fetch-users';
 
-export default function Home({ posts }) {
-  const [companyItems] = useState(glimpseCompanies);
+const defaultEndpoint = `https://api.na1.insightly.com/v3.1/Contacts`
+
+export async function getStaticProps() {
+    // Instead of fetching your `/api` route you can call the same
+    // function directly in `getStaticProps`
+    const data = await loadUsers()
+  
+    // Props returned will be passed to the page component
+    return { props: { data } }
+  }
+
+{/* 
+export async function getServerSideProps(){
+    console.log('initial call')
+    const res = await fetch(
+        `https://api.na1.insightly.com/v3.1/Contacts/Search?field_name=EMAIL_ADDRESS&field_value=egoldschmidt@glimpsegroup.io&brief=true&top=1&count_total=false`,
+        { method: "GET",
+          headers: {
+            "Content-Type": "multipart/form-data",
+            "Access-Control-Allow-Origin": "*",
+            'Access-Control-Allow-Credentials': true,
+            'Authorization': "Basic NjZmNzkxZWQtZjVkYS00YzE5LTgxODctNzExNTAzYTdjNjFkOg==",
+          }
+        })
+    const data = await res.json();
+    return {
+        props: {
+            data
+        }
+    }
+}
+*/}
+
+export default function Home({ data }) {
+    const [companyItems] = useState(glimpseCompanies);
     const b830 = useMediaQuery('(max-width:830px)')
+    const [users, setUsers] = useState(data)
+    console.log('data', data)
     return (
         <div className='HomePage'>
             <Helmet>
