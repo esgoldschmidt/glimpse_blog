@@ -12,7 +12,9 @@ import ClientHome from "../components/ClientHome";
 import Solutions from "../components/Solutions";
 import Companies from "../components/Companies";
 import { loadUsers } from '../lib/fetch-users';
+import Newsletter from '../components/NewsLetter.js'
 
+{/*
 const defaultEndpoint = `https://api.na1.insightly.com/v3.1/Contacts`
 
 export async function getStaticProps() {
@@ -23,6 +25,7 @@ export async function getStaticProps() {
     // Props returned will be passed to the page component
     return { props: { data } }
   }
+*/}
 
 {/* 
 export async function getServerSideProps(){
@@ -49,8 +52,6 @@ export async function getServerSideProps(){
 export default function Home({ data }) {
     const [companyItems] = useState(glimpseCompanies);
     const b830 = useMediaQuery('(max-width:830px)')
-    const [users, setUsers] = useState(data)
-    console.log('data', data)
     return (
         <div className='HomePage'>
             <Helmet>
@@ -134,6 +135,7 @@ export default function Home({ data }) {
     
             
             <FooterSite />
+            <Newsletter />
         </div>
     )
 }

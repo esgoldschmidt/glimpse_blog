@@ -6,7 +6,6 @@ import { Link } from 'next/link'
 function ReleaseItems ({ releaseItem }) {
   return (
     <div className='card-grid-responsive mt-3 text-center gap-4 flex flex-wrap justify-center pb-4 w-full'>
-      {console.log(releaseItem)}
         {
           releaseItem.map((item, index)=>{
 
