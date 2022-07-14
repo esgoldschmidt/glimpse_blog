@@ -49,7 +49,6 @@ function NewsLetter( { users } ) {
 
     async function handleSubmit(event) {
         event.preventDefault();
-
         await fetch(`/api/userEmail/${ email }`,{
             method: "GET",
             headers: {
@@ -58,6 +57,48 @@ function NewsLetter( { users } ) {
             }
         })
         .then(response => response.json())
+        .then(response => typeof response !== 'undefined'
+            ? fetch(`/api/user/${response.userID}`, {
+                method: "PUT",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+
+                //make sure to serialize your JSON body
+                body: JSON.stringify({
+                    id: response.userID,
+                    first: firstName,
+                    last: lastName,
+                    email: email
+                })
+            })
+            .then( (response) => { 
+                setSubmitted(true)
+                setEmail("")
+                setFirstName("")
+            })
+            : fetch("/api/user", {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+
+                //make sure to serialize your JSON body
+                body: JSON.stringify({
+                    first: firstName,
+                    last: lastName,
+                    email: email
+                })
+            })
+            .then( (response) => { 
+                setSubmitted(true)
+                setEmail("")
+                setFirstName("")
+            })
+        )
+        {/*
         .then(userId => {
             if (userId.userID){
                 // console.log(userResult[0].CONTACT_ID)
@@ -106,7 +147,7 @@ function NewsLetter( { users } ) {
             }
                 
         })
-        
+        */}
 
         {/*
         if (userResult.length > 0){
