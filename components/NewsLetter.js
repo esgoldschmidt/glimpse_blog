@@ -4,19 +4,17 @@ import { useCookies } from "react-cookie"
 import Modal from 'react-bootstrap/Modal';
 import { addUser } from '../lib/add-user';
 import { updateUser } from '../lib/update-user';
+import { useForm } from "react-hook-form";
 
 function NewsLetter( { users } ) {
 
     const [email, setEmail] = useState();
     const [firstName, setFirstName] = useState();
-    const [lastName, setLastName] = useState();
-    const [org, setOrg] = useState();
     const [submitted, setSubmitted] = useState(false);
     const breakGrid = useMediaQuery('(max-width:600px)')
     const [show, setShow] = useState(false);
     const [cookie, setCookie] = useCookies()
-    const [userExists, setUserExists] = useState(false)
-
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -26,14 +24,6 @@ function NewsLetter( { users } ) {
     
       function handleFirstChange(event){
         setFirstName(event.target.value)
-    }
-    
-      function handleLastChange(event){
-        setLastName(event.target.value)
-    }
-    
-      function handleOrgChange(event){
-        setOrg(event.target.value)
     }
 
     {/*
@@ -47,9 +37,10 @@ function NewsLetter( { users } ) {
     }
     */}
 
-    async function handleSubmit(event) {
-        event.preventDefault();
-        await fetch(`/api/userEmail/${ email }`,{
+    async function onSubmit() {
+        // event.preventDefault();
+        
+        await fetch(`/api/userEmail/${ watch('emailRHF')}`,{
             method: "GET",
             headers: {
                 'Accept': 'application/json',
@@ -68,9 +59,8 @@ function NewsLetter( { users } ) {
                 //make sure to serialize your JSON body
                 body: JSON.stringify({
                     id: response.userID,
-                    first: firstName,
-                    last: lastName,
-                    email: email
+                    first: watch('firstRHF'),
+                    email: watch('emailRHF')
                 })
             })
             .then( (response) => { 
@@ -87,9 +77,8 @@ function NewsLetter( { users } ) {
 
                 //make sure to serialize your JSON body
                 body: JSON.stringify({
-                    first: firstName,
-                    last: lastName,
-                    email: email
+                    first: watch('firstRHF'),
+                    email: watch('emailRHF')
                 })
             })
             .then( (response) => { 
@@ -217,7 +206,7 @@ function NewsLetter( { users } ) {
     return (
         <div>
             
-            <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='left-2 flex flex-col container-end justify-end' style={{ width: '320px', height: '295px', position:'fixed' }}>
+            <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='left-2 flex flex-col container-end justify-end' style={{ width: '320px', height: '300px', position:'fixed' }}>
                 <Modal.Header className='px-0 pb-0'>
                     <Modal.Title className='text-center w-full text-xl z-10 text-glimpse-blue font-medium'>Glimpse Insider Newsletter</Modal.Title>
                     <button type="button" onClick={ handleClose } className="border border-gray-500 -m-2 text-gray-400 bg-zinc-100 hover:text-red-300 hover:bg-red-100 px-1.5 transform duration-700 ease-in-out text-sm top-0 rounded-full absolute right-0" data-bs-dismiss="modal" aria-label="Close">X</button>
@@ -233,7 +222,7 @@ function NewsLetter( { users } ) {
                                 data-form-id="8602"
                                 id="news-form"
                                 encType="text/plain"
-                                onSubmit={ handleSubmit }
+                                onSubmit={handleSubmit(onSubmit)}
                             >
                                 <div className='flex flex-col items-center content-center my-1'>
                                 { !submitted &&
@@ -249,10 +238,18 @@ function NewsLetter( { users } ) {
                                             onChange={ handleEmailChange }
                                             className='p-2 rounded-lg w-64 bg-zinc-100 text-sm text-gray-500'
                                             autoComplete="off"
-                                            required
+                                            {...register("emailRHF", { 
+                                                required: true,
+                                                pattern: {
+                                                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]+$/,
+                                                    message: "Invalid email address"
+                                                }
+                                            })}
+                                            //required
                                             />
                                         </div>
-
+                                        <p className='w-full text-center text-xs text-red-400'>{errors.emailRHF?.type === 'required' && "Email is required"}</p>
+                                        {errors.emailRHF?.message && <p className='w-full text-center text-xs text-red-400'> {errors.emailRHF?.message} </p>}
                                         <div className='my-1 flex justify-end items-center'>
                                             <input
                                             id="insightly_FIRST_NAME"
@@ -263,10 +260,22 @@ function NewsLetter( { users } ) {
                                             placeholder='First Name*'
                                             className='p-2 text-sm rounded-lg w-64 bg-zinc-100 text-gray-500'  
                                             autoComplete="off"
-                                            required
+                                            {...register("firstRHF", { 
+                                                required: true,
+                                                maxLength: {
+                                                    value: 30,
+                                                    message: 'First name has a maximum of 30 characters',
+                                                }, 
+                                                pattern: {
+                                                    value: /^[a-z ,.'-]+$/i,
+                                                    message: "Invalid first name"
+                                                }
+                                            })}
+                                            //required
                                             />
                                         </div>
-                                        
+                                        <p className='w-full text-center text-xs text-red-400'>{errors.firstRHF?.type === 'required' && "Email is required"}</p>
+                                        {errors.firstRHF?.message && <p className='w-full text-center text-xs text-red-400'> {errors.firstRHF?.message} </p>}
                                         {/*
                                         <div className='my-1 flex justify-end items-center'>
                                             <input
