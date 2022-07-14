@@ -135,7 +135,7 @@ export default function Home({ data }) {
     
             
             <FooterSite />
-            <Newsletter />
+            {/* <Newsletter /> */}
         </div>
     )
 }
