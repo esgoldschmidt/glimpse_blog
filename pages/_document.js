@@ -56,6 +56,9 @@ class MyDocument extends Document {
               `}
             </Script>
 
+            {/* <!-- Insightly Domain Tracking --> */}
+            <script type="text/javascript" async defer src="https://chloe.insightly.services/js/JNJEYZ.js"></script>
+
             <link rel='icon' href='/favicon.ico' />
         </Head>
         <body>
