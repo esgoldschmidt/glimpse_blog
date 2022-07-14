@@ -206,10 +206,10 @@ function NewsLetter( { users } ) {
     return (
         <div>
             
-            <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='left-2 flex flex-col container-end justify-end' style={{ width: '330px', height: '300px', position:'fixed' }}>
+            <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='left-2 flex flex-col container-end justify-end' style={{ width: '300px', height: '300px', position:'fixed' }}>
                 <Modal.Header className='px-0 pb-0'>
                     <Modal.Title className='text-center w-full text-xl z-10 text-glimpse-blue font-medium'>Glimpse Insider Newsletter</Modal.Title>
-                    <button type="button" onClick={ handleClose } className="border border-gray-500 -m-2 text-gray-400 bg-zinc-100 hover:text-red-300 hover:bg-red-100 px-1.5 transform duration-700 ease-in-out text-sm top-0 rounded-full absolute right-0" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <button type="button" onClick={ handleClose } className="border border-gray-500 sm:-m-2 text-gray-400 bg-zinc-100 hover:text-red-300 hover:bg-red-100 px-1.5 transform duration-700 ease-in-out text-sm top-0 rounded-md sm:rounded-full absolute right-0" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </Modal.Header>
                 <Modal.Body className='p-0'>
                     <div className='flex justify-center'>
