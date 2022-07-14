@@ -1,19 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { AppBar, AccordionSummary, IconButton, Toolbar, MenuItem, MenuList, Divider, ClickAwayListener, Grow, Paper, Popper, useMediaQuery, SwipeableDrawer, List, ListItem, ListItemButton, ListItemText, Grid, Accordion, AccordionDetails, useScrollTrigger, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import { Toolbar } from '@material-ui/core';
-// import { makeStyles } from '@material-ui/core/styles';
 import Link from 'next/link';
-import { Link as SmoothLink } from 'react-scroll';
 import { ExternalLink } from 'react-external-link';
-import logo from "../assets/images/glimpseblue.svg";
 import { useRouter } from 'next/router'
-import externalLinkIcon from '../assets/images/External_link_font_awesome.svg.png';
-import { CSSTransition } from 'react-transition-group';
 import useAnalyticsEventTracker from './useAnalyticsEventTracker';
-
 
 function HeaderSite() {
     const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
