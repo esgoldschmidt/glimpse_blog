@@ -143,7 +143,7 @@ function aboutGlimpse() {
                                         }}
                                     >
                                     </div>
-                                    <div class="card__back_flip">
+                                    <div className="card__back_flip">
                                         <p className="card__body_flip">
                                             25 years of executive leadership experience
                                             <br />

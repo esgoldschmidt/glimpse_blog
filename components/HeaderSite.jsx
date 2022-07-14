@@ -13,6 +13,7 @@ import { useRouter } from 'next/router'
 import externalLinkIcon from '../assets/images/External_link_font_awesome.svg.png';
 import { CSSTransition } from 'react-transition-group';
 import useAnalyticsEventTracker from './useAnalyticsEventTracker';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 
 function HeaderSite() {
@@ -403,7 +404,7 @@ function HeaderSite() {
                   <a className="nav-link p-2.5 dropdown-toggle text-gray-500 hover:text-sky-600" id="solutions" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Industry Solutions
                   </a>
-                  <div className="dropdown-menu" aria-labelledby="solutions" style={{ width: '200px' }}>
+                  <div className="dropdown-menu flex-wrap" aria-labelledby="solutions" style={{ width: '200px' }}>
                     {/* <div className="dropdown-divider"></div> */}
                     <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/industry-solutions/architecture-engineering-construction" ? "bg-glimpse-blue text-white" : ""}`} href="/industry-solutions/architecture-engineering-construction">AEC</a>
                     <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/industry-solutions/k12-education" ? "bg-glimpse-blue text-white" : ""}`} href="/industry-solutions/k12-education">K-12 Education</a>
@@ -420,7 +421,7 @@ function HeaderSite() {
                   <a className="nav-link p-2.5 dropdown-toggle text-gray-500 hover:text-sky-600" href="#" id="news" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     News
                   </a>
-                  <div className="dropdown-menu" aria-labelledby="news">
+                  <div className="dropdown-menu flex-wrap" aria-labelledby="news">
                     <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/news/press-releases" ? "bg-glimpse-blue text-white" : ""}`} href="/news/press-releases">Press Releases</a>
                     <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/news/glimpse-blog" ? "bg-glimpse-blue text-white" : ""}`} href="/news/glimpse-blog">Glimpse Blog</a>
                     <a className={`dropdown-item hover:bg-glimpse-blue hover:text-white text-sm ${location.pathname === "/news/press-coverage" ? "bg-glimpse-blue text-white" : ""}`} href="/news/press-coverage" target="_blank">Press Coverage</a>

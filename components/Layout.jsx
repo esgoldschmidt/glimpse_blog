@@ -8,8 +8,9 @@ import ToastItem from './ToastItem'
 const Layout = ( { children } ) => {
     return (
         <div>
+           
             { children }
-            
+
             <ConsentPopUp />
         </div>
     )

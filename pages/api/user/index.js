@@ -8,13 +8,13 @@ export default async function userHandler(req,res) {
   } = req
 
   switch (method) {
-    case 'PUT':
-        await updateUser(body.id, body.first, body.email)
+    case 'POST':
+        await addUser(body.first, body.email)
         // Update or create data in your database
         await res.status(200).json({ reply: 'success' })
         break
     default:
-        res.setHeader('Allow', ['PUT'])
+        res.setHeader('Allow', ['POST'])
         res.status(405).end(`Method ${method} Not Allowed`)
   }
 }
