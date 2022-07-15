@@ -6,7 +6,7 @@ import { addUser } from '../lib/add-user';
 import { updateUser } from '../lib/update-user';
 import { useForm } from "react-hook-form";
 
-function NewsLetter( { users } ) {
+function NewsLetter() {
 
     const [email, setEmail] = useState();
     const [firstName, setFirstName] = useState();
@@ -161,7 +161,7 @@ function NewsLetter( { users } ) {
                                             })}
                                             />
                                         </div>
-                                        <p className='w-full text-center text-xs text-red-400'>{errors.firstRHF?.type === 'required' && "Email is required"}</p>
+                                        <p className='w-full text-center text-xs text-red-400'>{errors.firstRHF?.type === 'required' && "First name is required"}</p>
                                         {errors.firstRHF?.message && <p className='w-full text-center text-xs text-red-400'> {errors.firstRHF?.message} </p>}
                                         {/*
                                         <div className='my-1 flex justify-end items-center'>
