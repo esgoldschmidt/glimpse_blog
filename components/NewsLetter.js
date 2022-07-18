@@ -6,7 +6,11 @@ import { addUser } from '../lib/add-user';
 import { updateUser } from '../lib/update-user';
 import { useForm } from "react-hook-form";
 
+<<<<<<< HEAD
 function NewsLetter( { users } ) {
+=======
+function NewsLetter() {
+>>>>>>> development
 
     const [email, setEmail] = useState();
     const [firstName, setFirstName] = useState();
@@ -25,6 +29,7 @@ function NewsLetter( { users } ) {
       function handleFirstChange(event){
         setFirstName(event.target.value)
     }
+<<<<<<< HEAD
 
     {/*
     const userResult = users.filter(e => e.EMAIL_ADDRESS === email);
@@ -39,6 +44,10 @@ function NewsLetter( { users } ) {
 
     async function onSubmit() {
         // event.preventDefault();
+=======
+
+    async function onSubmit() {
+>>>>>>> development
         
         await fetch(`/api/userEmail/${ watch('emailRHF')}`,{
             method: "GET",
@@ -67,6 +76,7 @@ function NewsLetter( { users } ) {
                 setSubmitted(true)
                 setEmail("")
                 setFirstName("")
+<<<<<<< HEAD
             })
             : fetch("/api/user", {
                 method: "POST",
@@ -183,37 +193,63 @@ function NewsLetter( { users } ) {
             // addUser(firstName, lastName, email)
         }
         */}
+=======
+            })
+            : fetch("/api/user", {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+
+                //make sure to serialize your JSON body
+                body: JSON.stringify({
+                    first: watch('firstRHF'),
+                    email: watch('emailRHF')
+                })
+            })
+            .then( (response) => { 
+                setSubmitted(true)
+                setEmail("")
+                setFirstName("")
+            })
+        )
+>>>>>>> development
         
       }
     
       useEffect(() => {
-        console.log('cookie', cookie.recentCookie)
         if (!cookie.recentCookie) {
             setTimeout(function() {
                 // check if within 30 days in session 
-                {/*
                 setCookie("recentCookie", "recentlyVisited", {
                     path: "/",
                     maxAge: 2678400, // Expires after 30days
                     sameSite: true,
                 })
-                */}
                 handleShow()
-            }, 3000)
+            }, 30000)
         }
     }, [])
 
     return (
         <div>
             
+<<<<<<< HEAD
             <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='left-2 flex flex-col container-end justify-end' style={{ width: '330px', height: '300px', position:'fixed' }}>
                 <Modal.Header className='px-0 pb-0'>
                     <Modal.Title className='text-center w-full text-xl z-10 text-glimpse-blue font-medium'>Glimpse Insider Newsletter</Modal.Title>
                     <button type="button" onClick={ handleClose } className="border border-gray-500 -m-2 text-gray-400 bg-zinc-100 hover:text-red-300 hover:bg-red-100 px-1.5 transform duration-700 ease-in-out text-sm top-0 rounded-full absolute right-0" data-bs-dismiss="modal" aria-label="Close">X</button>
+=======
+            <Modal show={show} onHide={handleClose} backdrop={false} size='sm' className='left-2 flex flex-col container-end justify-end pr-5' style={{ width: '300px', height: '300px', position:'fixed' }}>
+                <Modal.Header className='px-0 pb-0'>
+                    <Modal.Title className='text-center w-full text-xl z-10 text-glimpse-blue font-medium'>Newsletter Sign-up</Modal.Title>
+                    <button type="button" onClick={ handleClose } className="border border-gray-500 sm:-m-2 text-gray-400 bg-zinc-100 hover:text-red-300 hover:bg-red-100 px-1.5 transform duration-700 ease-in-out text-sm top-0 rounded-md sm:rounded-full absolute right-0" data-bs-dismiss="modal" aria-label="Close">X</button>
+>>>>>>> development
                 </Modal.Header>
                 <Modal.Body className='p-0'>
                     <div className='flex justify-center'>
-                        <p className='mt-1 text-center text-gray-600 text-sm'>Keep up with the Glimpse Group! <br /> Sign up to receive our newsletter.</p>
+                        <p className='mt-1 text-center text-gray-600 text-sm'>Cut through the noise with our monthly Glimpse Insider newsletter.</p>
                     </div>
                     <div className="contact-form ">
                         
@@ -245,7 +281,10 @@ function NewsLetter( { users } ) {
                                                     message: "Invalid email address"
                                                 }
                                             })}
+<<<<<<< HEAD
                                             //required
+=======
+>>>>>>> development
                                             />
                                         </div>
                                         <p className='w-full text-center text-xs text-red-400'>{errors.emailRHF?.type === 'required' && "Email is required"}</p>
@@ -271,10 +310,16 @@ function NewsLetter( { users } ) {
                                                     message: "Invalid first name"
                                                 }
                                             })}
+<<<<<<< HEAD
                                             //required
                                             />
                                         </div>
                                         <p className='w-full text-center text-xs text-red-400'>{errors.firstRHF?.type === 'required' && "Email is required"}</p>
+=======
+                                            />
+                                        </div>
+                                        <p className='w-full text-center text-xs text-red-400'>{errors.firstRHF?.type === 'required' && "First name is required"}</p>
+>>>>>>> development
                                         {errors.firstRHF?.message && <p className='w-full text-center text-xs text-red-400'> {errors.firstRHF?.message} </p>}
                                         {/*
                                         <div className='my-1 flex justify-end items-center'>
