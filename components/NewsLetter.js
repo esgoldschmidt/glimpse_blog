@@ -36,7 +36,8 @@ function NewsLetter() {
             }
         })
         .then(response => response.json())
-        .then(response => typeof response !== 'undefined'
+       
+        .then(response => response.userID !== 0
             ? fetch(`/api/user/${response.userID}`, {
                 method: "PUT",
                 headers: {
@@ -56,7 +57,8 @@ function NewsLetter() {
                 setEmail("")
                 setFirstName("")
             })
-            : fetch("/api/user", {
+            : 
+            fetch("/api/user", {
                 method: "POST",
                 headers: {
                     'Accept': 'application/json',
@@ -75,7 +77,6 @@ function NewsLetter() {
                 setFirstName("")
             })
         )
-        
       }
     
       useEffect(() => {
@@ -88,7 +89,7 @@ function NewsLetter() {
                     sameSite: true,
                 })
                 handleShow()
-            }, 30000)
+            }, 20000)
         }
     }, [])
 
