@@ -42,21 +42,22 @@ function higherEducation() {
             <HeaderSite />
             <div className="pt-12 sm:px-3 mt-16">
                 <h1 className='text-center text-4xl lg:text-5xl font-light m-3 text-gray-500'>Solutions by Sector</h1>
-                <section className="outer-container relative bg-sky-700 max-w-screen-2xl rounded-lg mx-1 my-4 py-5 px-2 md:px-4">
+                <section className="outer-container relative bg-sky-700 max-w-screen-2xl rounded-lg mx-1 my-4 sm:py-5 sm:px-2 md:px-4">
                     <div className="inner__container text-gray-700 rounded-lg">
                         <div className="grid-container flex items-center lg:items-stretch lg:justify-between flex-col lg:flex-row w-full bg-cover bg-no-repeat bg-right lg:bg-center py-6 pb-24 rounded-t-lg" style={{ backgroundImage: `url(${background.src})` }}>
-                            <div className="sm:h-72 lg:h-auto w-full lg:w-1/2 ml-4">
+                            <div className="h-72 lg:h-80 w-full lg:w-1/2 sm:ml-4">
                                 <iframe
                                     src="https://player.vimeo.com/video/652134375?h=5bc6d23b9c&title=0&byline=0&portrait=0"
                                     title="YouTube video player"
                                     frameBorder={0}
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
+                                    className='grow p-0 m-0 border-0'
                                     width='100%'
                                     height='100%'
                                 />
                             </div>
-                            <div className="w-full md:w-10/12 lg:w-1/2">
+                            <div className="w-full md:w-10/12 lg:w-1/2 flex flex-col justify-center">
                                 <h2 className='text-white text-3xl xl:text-4xl m-3 text-center font-light'>Higher Education</h2>
                                 <p className='text-white mb-4 mx-4 font-light'>Enhance education at the highest level by using VR/AR to challenge and inspire students. Improve remote learning with immersive educational environments and reinforce in-person learning with specialized classroom technology. Equip students with the latest VR/AR tools for presentation and research and boost enrollment by adopting innovative educational techniques.</p>
                             </div>

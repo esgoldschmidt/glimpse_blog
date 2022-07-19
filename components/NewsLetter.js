@@ -89,7 +89,7 @@ function NewsLetter() {
                     sameSite: true,
                 })
                 handleShow()
-            }, 20000)
+            }, 15000)
         }
     }, [])
 

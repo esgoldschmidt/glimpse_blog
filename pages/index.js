@@ -64,37 +64,37 @@ export default function Home({ data }) {
             <HeaderSite />
         
             <div className='home-content mt-28'>
-            <Box
-                display="flex"
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                position="absolute"
-                top='110px'
-                zIndex={40}
-                height="91.45vh"
-                minHeight='600px'
-                width="100%"
-                color="white"
-                >
-                <div align="center" className='py-4 text-2xl md:text-4xl lg:text-5xl md:w-11/12 ' style={{ fontFamily: 'Montserrat'}}>
-                    <h1 className='font-medium'>
-                    Unlocking the Benefits of <br /> Virtual Reality & Augmented Reality
-                    </h1>
-                    
-                </div>      
-                <div align="center" className='w-full'>
-                    <h2 className='py-2 px-3 font-light text-xl lg:text-2xl w-full' style={{ fontFamily: 'Montserrat'}}>
-                    The Glimpse Group <a href='https://ir.theglimpsegroup.com/' target='_blank' rel="noreferrer" className='transform duration-700 hover:ease hover:text-glimpse-blue'>
-                    (Nasdaq: VRAR)</a> is an immersive technology 
-                    { !b830 ? <br /> : " " }
-                    platform company, comprised of a diverse ecosystem of companies 
-                    { !b830 ? <br /> : " " } 
-                    providing enterprise-focused AR and VR software 
-                    { !b830 ? <br /> : " " } 
-                    and services across sectors
-                    </h2>
-                </div>
+                <Box
+                    display="flex"
+                    flexDirection="column"
+                    justifyContent="center"
+                    alignItems="center"
+                    position="absolute"
+                    top='110px'
+                    zIndex={40}
+                    height="91.45vh"
+                    minHeight='600px'
+                    width="100%"
+                    color="white"
+                    >
+                    <div align="center" className='py-4 text-2xl md:text-4xl lg:text-5xl md:w-11/12 ' style={{ fontFamily: 'Montserrat'}}>
+                        <h1 className='font-medium'>
+                        Unlocking the Benefits of <br /> Virtual Reality & Augmented Reality
+                        </h1>
+                        
+                    </div>      
+                    <div align="center" className='w-full'>
+                        <h2 className='py-2 px-3 font-light text-xl lg:text-2xl w-full' style={{ fontFamily: 'Montserrat'}}>
+                        The Glimpse Group <a href='https://ir.theglimpsegroup.com/' target='_blank' rel="noreferrer" className='transform duration-700 hover:ease hover:text-glimpse-blue'>
+                        (Nasdaq: VRAR)</a> is an immersive technology 
+                        { !b830 ? <br /> : " " }
+                        platform company, comprised of a diverse ecosystem of companies 
+                        { !b830 ? <br /> : " " } 
+                        providing enterprise-focused AR and VR software 
+                        { !b830 ? <br /> : " " } 
+                        and services across sectors
+                        </h2>
+                    </div>
                 </Box>
                 <VideoJS />
             </div>
