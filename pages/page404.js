@@ -13,7 +13,7 @@ function page404() {
                 />
             </Helmet>
             <HeaderSite />
-            404!
+            404! 
         </div>
     )
 }
