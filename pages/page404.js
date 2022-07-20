@@ -1,5 +1,6 @@
 import React from 'react'
 import HeaderSite from '../components/HeaderSite';
+import { Helmet } from "react-helmet";
 
 function page404() {
     return (
@@ -17,4 +18,4 @@ function page404() {
     )
 }
 
-export default page404
+export default page404 
