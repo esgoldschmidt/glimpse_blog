@@ -137,7 +137,7 @@ function NewsLetter() {
                                             })}
                                             />
                                         </div>
-                                        <p className='w-full text-center text-xs text-red-400'>{errors.emailRHF?.type === 'required' && "Email is required"}</p>
+                                        {errors.emailRHF?.type === 'required' && <p className='w-full text-center text-xs text-red-400'>Email is required</p>}
                                         {errors.emailRHF?.message && <p className='w-full text-center text-xs text-red-400'> {errors.emailRHF?.message} </p>}
                                         <div className='my-1 flex justify-end items-center'>
                                             <input
@@ -162,7 +162,7 @@ function NewsLetter() {
                                             })}
                                             />
                                         </div>
-                                        <p className='w-full text-center text-xs text-red-400'>{errors.firstRHF?.type === 'required' && "First name is required"}</p>
+                                        {errors.firstRHF?.type === 'required' && <p className='w-full text-center text-xs text-red-400'>First name is required</p>}
                                         {errors.firstRHF?.message && <p className='w-full text-center text-xs text-red-400'> {errors.firstRHF?.message} </p>}
                                         {/*
                                         <div className='my-1 flex justify-end items-center'>

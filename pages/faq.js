@@ -87,6 +87,13 @@ function faq() {
 
     return (
         <div>
+            <Helmet>
+                <title>FAQ | The Glimpse Group | VR and AR Enterprise Solutions</title>
+                <meta
+                name="description"
+                content="Frequently Asked Questions for The Glimpse Group, a Virtual Reality ( VR ) & Augmented Reality ( AR ) Platform Company"
+                />
+            </Helmet>
             <HeaderSite />
             <div className='flex justify-center mb-6 py-12 px-3 mt-16' style={{ fontFamily: 'Montserrat' }}>
                 <div className='w-11/12 md:w-9/12'>

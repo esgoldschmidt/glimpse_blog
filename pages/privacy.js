@@ -7,6 +7,13 @@ import HeaderSite from '../components/HeaderSite';
 function privacy() {
     return (
         <div>
+            <Helmet>
+                <title>Privacy Policy | The Glimpse Group | VR and AR Enterprise Solutions</title>
+                <meta
+                name="description"
+                content="View The Glimpse Group's Privacy Policy"
+                />
+            </Helmet>
             <HeaderSite />
             <div className="flex flex-col items-center py-12 px-3 mt-16" style={{ fontFamily: 'Montserrat' }}>
                 <div className='w-10/12 md:w-2/3 flex flex-col items-center'>
