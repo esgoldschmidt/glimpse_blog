@@ -62,19 +62,17 @@ function ContactForm() {
         // Else reCAPTCHA was executed successfully so proceed sending message
         emailjs.sendForm('service_d1x8ss7', 'template_sls03f4', detailsToSend, 'ZTQJioF16AnG3aZEk')
           .then((result) => {
-              console.log(result.text);
               gaEventTracker('contact_form_submitted')
           }, (error) => {
               console.log(error.text); 
           });
-          setSubmitted(true)
           setEmail('')
           setPhone('')
           setFirstName('')
           setLastName('')
           setOrg('')
-          setSelectedInterest(<p dir='rtl'>מתעניין ב:</p>)
           setMessage('')
+          setSubmitted(true)
         // Reset the reCAPTCHA so that it can be executed again if user 
         // submits another email.
         recaptchaRef.current.reset();
