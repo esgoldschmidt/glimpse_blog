@@ -12,10 +12,10 @@ function ContactForm() {
     const [message, setMessage] = useState();
     const [submitted, setSubmitted] = useState(false);
     const gaEventTracker = useAnalyticsEventTracker('Contact us');
-  
+    const [detailsToSend, setDetailsToSend] = useState()
     const bSmall = useMediaQuery('(max-width:450px)')
     const breakGrid = useMediaQuery('(max-width:600px)')
-    const sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+    const sitekey = process.env.NEXT_PUBLIC_RECAPTCHA_KEY_INVISIBLE
     const recaptchaRef = React.createRef();
 
     function handleEmailChange(event){
@@ -40,28 +40,8 @@ function ContactForm() {
     
       function handleSubmit(event) {
         event.preventDefault();
-        //console.log('test', event.target);
-        // recaptchaRef.current.execute();
-        let gResponse = document.getElementById('g-recaptcha-response')
-        console.log(gResponse.value)
-        if (gResponse.value){
-            emailjs.sendForm('service_d1x8ss7', 'template_sls03f4', event.target, 'ZTQJioF16AnG3aZEk')
-            .then((result) => {
-                console.log(result.text);
-                gaEventTracker('contact_form_submitted')
-            }, (error) => {
-                console.log(error.text); 
-            });
-            setSubmitted(true)
-            setEmail('')
-            setFirstName('')
-            setLastName('')
-            setOrg('')
-            setMessage('')
-        } else {
-            alert('RECAPTCHA required')
-        }
-        
+        setDetailsToSend(event.target)
+        recaptchaRef.current.execute();
       }
 
       function resetForm(event) {
@@ -71,6 +51,31 @@ function ContactForm() {
         setLastName('')
         setOrg('')
         setMessage('')
+      }
+
+      const onReCAPTCHAChange = (captchaCode) => {
+        // If the reCAPTCHA code is null or undefined indicating that
+        // the reCAPTCHA was expired then return early
+        if(!captchaCode) {
+          return;
+        }
+        // Else reCAPTCHA was executed successfully so proceed sending message
+        emailjs.sendForm('service_d1x8ss7', 'template_sls03f4', detailsToSend, 'ZTQJioF16AnG3aZEk')
+          .then((result) => {
+              gaEventTracker('contact_form_submitted')
+          }, (error) => {
+              console.log(error.text); 
+          });
+          setEmail('')
+          setPhone('')
+          setFirstName('')
+          setLastName('')
+          setOrg('')
+          setMessage('')
+          setSubmitted(true)
+        // Reset the reCAPTCHA so that it can be executed again if user 
+        // submits another email.
+        recaptchaRef.current.reset();
       }
 
     return (
@@ -165,17 +170,13 @@ function ContactForm() {
                 </div>
               </div>
               
-              {/* recaptcha block 
-              <div className='my-3 max-w-2xl'>
-                <div className="g-recaptcha" data-sitekey={ sitekey } data-size={!bSmall ? 'normal' : 'compact' }></div>
-              </div>
-              */}
-
               <ReCAPTCHA
+                ref={recaptchaRef}
+                size="invisible"
                 sitekey={sitekey}
-                onChange={handleSubmit}
-                className='m-4'
-                />
+                onChange={onReCAPTCHAChange}
+                className='z-50'
+              />
               
               <div className='flex-col content-center w-full'>
                 <div className='flex justify-center gap-6'>
