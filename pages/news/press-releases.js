@@ -11,7 +11,7 @@ import FooterSite from '../../components/FooterSite';
 
 function pressReleases({ pressReleases }) {
     const allDates = [...new Set(pressReleases.map(item => item.node.releaseYear)), 'All'];
-    const [dates] = useState(allDates);
+    const [dates] = useState(allDates.sort());
     const [releaseItems, setReleaseItems] = useState( pressReleases );
     const [date, setDate] = useState('Start')
     
