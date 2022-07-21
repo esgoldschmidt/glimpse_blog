@@ -13,8 +13,13 @@ export default function Clients() {
       slidesToSlide: 1 // optional, default to 1.
     },
     tablet: {
-      breakpoint: { max: 1024, min: 600 },
+      breakpoint: { max: 1024, min: 800 },
       items: 4,
+      slidesToSlide: 1 // optional, default to 1.
+    },
+    tablet_mini: {
+      breakpoint: { max: 800, min: 600 },
+      items: 3,
       slidesToSlide: 1 // optional, default to 1.
     },
     mobile: {
