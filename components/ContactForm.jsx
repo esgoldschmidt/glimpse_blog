@@ -62,12 +62,12 @@ function ContactForm() {
         // Else reCAPTCHA was executed successfully so proceed sending message
         emailjs.sendForm('service_d1x8ss7', 'template_sls03f4', detailsToSend, 'ZTQJioF16AnG3aZEk')
           .then((result) => {
+              console.log(result.text);
               gaEventTracker('contact_form_submitted')
           }, (error) => {
               console.log(error.text); 
           });
           setEmail('')
-          setPhone('')
           setFirstName('')
           setLastName('')
           setOrg('')
