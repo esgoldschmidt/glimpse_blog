@@ -13,7 +13,7 @@ import { getPressCoverage } from '../../services';
 
 function pressCoverage( {pressCoverageItems} ) {
     const allDates = ['All', ...new Set(pressCoverageItems.map(item => item.node.coverageYear))];
-    const [dates] = useState(allDates);
+    const [dates] = useState(allDates.sort());
     const [pressItems, setPressItems] = useState(pressCoverageItems);
     const [date, setDate] = useState('Start')
 
