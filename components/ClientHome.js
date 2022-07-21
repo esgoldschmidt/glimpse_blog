@@ -39,13 +39,13 @@ export default function Clients() {
           responsive={responsive}
           ssr={true} // means to render carousel on server-side.
           infinite={true}
-          autoPlay={!isMobile ? true : false}
+          autoPlay={true}
           autoPlaySpeed={6000}
           keyBoardControl={true}
           //customTransition="all 1.5"
           transitionDuration={500}
           containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
+          removeArrowOnDeviceType={["mobile"]}
           //deviceType={this.props.deviceType}
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px w-32"
