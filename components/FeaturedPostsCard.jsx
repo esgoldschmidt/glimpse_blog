@@ -14,7 +14,7 @@ const FeaturedPostsCard = ({post}) => {
             </div>
             <div className='w-full h-full text-center text-white flex rounded-b-lg flex-col items-center place-content-between bg-gray-200'>
                 
-                <a href={'/news/glimpse-blog/' + post.slug} key={post.title} className='text-center text-normal text-gray-500 cursor-pointer transition hover:text-glimpse-blue duration-300 ease-in-out hover:scale-105 px-2 h-16 flex items-center'>
+                <a href={'/news/glimpse-blog/' + post.slug} className='text-center text-normal text-gray-500 cursor-pointer transition hover:text-glimpse-blue duration-300 ease-in-out hover:scale-105 px-2 h-16 flex items-center'>
                     {post.title}
                 </a>
                 <div className='flex items-center justify-center'>
@@ -25,7 +25,7 @@ const FeaturedPostsCard = ({post}) => {
                         {moment(post.releaseDate).format('MMM DD, YYYY')}
                     </div>
                 </div>
-                <Link href={'/news/glimpse-blog/' + post.slug} key={post.title} className='justify-items-center text-center h-full w-350px'>
+                <Link href={'/news/glimpse-blog/' + post.slug} className='justify-items-center text-center h-full w-350px'>
                     <button className='bg-glimpse-blue px-4 py-2 mt-2 w-full rounded-b-lg hover:transition hover:duration-300 ease hover:bg-sky-600'>Read</button>
                 </Link>
             </div>
